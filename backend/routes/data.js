@@ -1,8 +1,13 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 const dataUseCase = require("../useCase/data");
+const CityUseCase = require("../useCase/city");
 
-router.post("/communes", dataUseCase.communes);
+router.get("/communes", dataUseCase.communes);
+
+router.get("/cities", CityUseCase.getAllCities);
+router.post("/cities", CityUseCase.createCity);
+
 
 module.exports = router;

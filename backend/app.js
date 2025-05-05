@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -19,6 +20,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/datas", datasRoute);
+app.use("/api/datas", (req, res, next) => {
+  if (req.body && typeof req.body === "object") {
+    for (const key in req.body) {
+      if (typeof req.body[key] === "string") {
+        req.body[key] = req.body[key].replace(/<[^>]*>?/gm, ""); // Remove HTML tags
+      }
+    }
+  }
+  next();
+}, datasRoute);
 
 module.exports = app;
