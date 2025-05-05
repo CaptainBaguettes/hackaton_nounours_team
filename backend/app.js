@@ -1,6 +1,7 @@
 const express = require("express");
 const datasRoute = require("./routes/data");
 const bodyParser = require("body-parser");
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -20,15 +21,21 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/datas", (req, res, next) => {
-  if (req.body && typeof req.body === "object") {
-    for (const key in req.body) {
-      if (typeof req.body[key] === "string") {
-        req.body[key] = req.body[key].replace(/<[^>]*>?/gm, ""); // Remove HTML tags
+app.use("/api", userRoutes);
+
+app.use(
+  "/api/datas",
+  (req, res, next) => {
+    if (req.body && typeof req.body === "object") {
+      for (const key in req.body) {
+        if (typeof req.body[key] === "string") {
+          req.body[key] = req.body[key].replace(/<[^>]*>?/gm, ""); // Remove HTML tags
+        }
       }
     }
-  }
-  next();
-}, datasRoute);
+    next();
+  },
+  datasRoute
+);
 
 module.exports = app;
