@@ -9,6 +9,17 @@ const City = require('../models/City');
 const createCity = async (req, res) => {
   try {
     const { name, latitude, longitude, nb_population, nb_doctors } = req.body;
+    // Validate and sanitize input
+    if (!name || typeof name !== 'string') {
+      return res.status(400).json({ error: 'Invalid name' });
+    }
+    if (typeof latitude !== 'number' || typeof longitude !== 'number') {
+      return res.status(400).json({ error: 'Invalid latitude or longitude' });
+    }
+    if (typeof nb_population !== 'number' || typeof nb_doctors !== 'number') {
+      return res.status(400).json({ error: 'Invalid population or doctors count' });
+    }
+
     const city = await City.create({
       name,
       latitude,
