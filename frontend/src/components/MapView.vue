@@ -4,17 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet.heat';
 
-// Fix for default marker icons
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl:
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
-
 // Extended data for cities in Ille-et-Vilaine
 const cities = [
   // Major cities
@@ -278,10 +267,37 @@ const cities = [
   },
 ];
 
+// Type definitions
+interface GeoJsonFeature {
+  type: string;
+  properties: {
+    nom?: string;
+    code?: string;
+    [key: string]: any;
+  };
+  geometry: any;
+}
+
+interface GeoJsonData {
+  type: string;
+  features: GeoJsonFeature[];
+}
+
+// Map-related variables
 let map: L.Map;
 let heatLayer: any;
 let cityMarkers: L.Marker[] = [];
 
+// Constants
+const DEPARTMENT_CODE = '35';
+const MAP_CENTER = [48.117266, -1.6777926];
+const DEFAULT_ZOOM = 9;
+const DEPARTMENT_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson';
+const COMMUNES_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes-version-simplifiee.geojson';
+
+/**
+ * Generates data for the heatmap based on city population
+ */
 const getHeatData = () => {
   return cities.map((city) => {
     const intensity = Math.log10(city.population) * 0.8;
@@ -289,6 +305,9 @@ const getHeatData = () => {
   });
 };
 
+/**
+ * Adds labels for major cities
+ */
 const addCityLabels = () => {
   cities.forEach((city) => {
     if (city.population > 15000) {
@@ -301,42 +320,146 @@ const addCityLabels = () => {
           className: 'city-label',
         })
         .addTo(map);
+      
       cityMarkers.push(marker);
     }
   });
 };
 
-const loadCommunesGeoJSON = async () => {
-  try {
-    console.log('Loading communes GeoJSON...');
+/**
+ * Creates and adds markers for all cities with population info
+ */
+const addCityMarkers = () => {
+  cities.forEach((city) => {
+    L.marker([city.lat, city.lng], { opacity: 0 })
+      .bindPopup(`
+        <b>${city.name}</b><br>
+        Population: ${city.population.toLocaleString()}<br>
+        Type: ${city.type}
+      `)
+      .addTo(map);
+  });
+};
+
+/**
+ * Creates and adds a legend to the map
+ */
+const addLegend = () => {
+  const legend = L.control({ position: 'bottomright' });
+  
+  legend.onAdd = () => {
+    const div = L.DomUtil.create('div', 'info legend');
+    div.style.backgroundColor = 'white';
+    div.style.padding = '8px';
+    div.style.borderRadius = '4px';
+    div.style.border = '1px solid #ccc';
+
+    // Create gradient legend
+    div.innerHTML = '<h4>Population Density</h4>';
+
+    // Add gradient bar
+    const gradientBar = '<div style="width:100%; height:20px; background: linear-gradient(to right, #00f, #0f0, #ff0, #f00);"></div>';
+
+    // Add labels
+    div.innerHTML +=
+      gradientBar +
+      '<div style="display:flex; justify-content:space-between; margin-top:5px;">' +
+      '<span>Low</span>' +
+      '<span>Medium</span>' +
+      '<span>High</span>' +
+      '</div>';
     
-    const response = await fetch(
-      'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes-version-simplifiee.geojson'
-    );
+    return div;
+  };
+  
+  legend.addTo(map);
+};
+
+/**
+ * Displays an error message on the map
+ */
+const showErrorMessage = (message: string) => {
+  const errorDiv = document.createElement('div');
+  errorDiv.style.position = 'absolute';
+  errorDiv.style.top = '10px';
+  errorDiv.style.right = '10px';
+  errorDiv.style.backgroundColor = 'white';
+  errorDiv.style.padding = '10px';
+  errorDiv.style.border = '1px solid red';
+  errorDiv.style.borderRadius = '4px';
+  errorDiv.style.zIndex = '1000';
+  errorDiv.innerHTML = message;
+  
+  const mapElement = document.querySelector('#map');
+  if (mapElement) {
+    mapElement.appendChild(errorDiv);
+  }
+  
+  // Remove error message after 5 seconds
+  setTimeout(() => {
+    errorDiv.remove();
+  }, 5000);
+};
+
+/**
+ * Loads and displays department boundaries
+ */
+const loadDepartmentBoundaries = async () => {
+  try {
+    const response = await fetch(DEPARTMENT_GEOJSON_URL);
     
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     
-    const geojsonData = await response.json();
+    const geojsonData: GeoJsonData = await response.json();
+    
+    L.geoJSON(geojsonData, {
+      filter: (feature) => feature.properties.code === DEPARTMENT_CODE,
+      style: {
+        color: 'rgba(255, 123, 255, 0.2)',
+        weight: 5,
+        fillOpacity: 0,
+      },
+    }).addTo(map);
+
+    // Load communes after department boundary is loaded
+    await loadCommunesGeoJSON();
+  } catch (error) {
+    console.error('Error loading department boundaries:', error);
+    showErrorMessage(`Failed to load department boundaries: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+};
+
+/**
+ * Loads and displays commune boundaries for Ille-et-Vilaine
+ */
+const loadCommunesGeoJSON = async () => {
+  try {
+    console.log('Loading communes GeoJSON...');
+    
+    const response = await fetch(COMMUNES_GEOJSON_URL);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    
+    const geojsonData: GeoJsonData = await response.json();
     console.log('GeoJSON loaded, processing...');
     
     // Filter communes in department 35 (Ille-et-Vilaine)
-    // The commune code has the department code as the first 2 digits
     const filteredFeatures = geojsonData.features.filter(feature => {
-      // Check if the feature has properties and code
-      if (feature.properties && feature.properties.code) {
-        // Extract department code (first 2 digits)
+      if (feature.properties?.code) {
         const deptCode = feature.properties.code.substring(0, 2);
-        return deptCode === '35';
+        return deptCode === DEPARTMENT_CODE;
       }
       return false;
     });
     
-    console.log(`Found ${filteredFeatures.length} communes in department 35`);
+    console.log(`Found ${filteredFeatures.length} communes in department ${DEPARTMENT_CODE}`);
     
     if (filteredFeatures.length === 0) {
-      console.warn('No communes found for department 35');
+      console.warn(`No communes found for department ${DEPARTMENT_CODE}`);
       return;
     }
     
@@ -350,9 +473,8 @@ const loadCommunesGeoJSON = async () => {
           fillOpacity: 0.2,
         },
         onEachFeature: (feature, layer) => {
-          if (feature.properties && feature.properties.nom) {
-            const name = feature.properties.nom;
-            layer.bindPopup(`<b>${name}</b>`);
+          if (feature.properties?.nom) {
+            layer.bindPopup(`<b>${feature.properties.nom}</b>`);
           }
         },
       }
@@ -361,36 +483,23 @@ const loadCommunesGeoJSON = async () => {
     console.log('Communes GeoJSON added to map');
   } catch (error) {
     console.error('Error loading communes GeoJSON:', error);
-    
-    // Add visual feedback about the error
-    const errorDiv = document.createElement('div');
-    errorDiv.style.position = 'absolute';
-    errorDiv.style.top = '10px';
-    errorDiv.style.right = '10px';
-    errorDiv.style.backgroundColor = 'white';
-    errorDiv.style.padding = '10px';
-    errorDiv.style.border = '1px solid red';
-    errorDiv.style.borderRadius = '4px';
-    errorDiv.style.zIndex = '1000';
-    errorDiv.innerHTML = `Failed to load communes: ${error.message}`;
-    document.querySelector('#map').appendChild(errorDiv);
-    
-    // Remove error message after 5 seconds
-    setTimeout(() => {
-      errorDiv.remove();
-    }, 5000);
+    showErrorMessage(`Failed to load communes: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 };
 
-onMounted(() => {
-  // Initialize map centered on Ille-et-Vilaine
-  map = L.map('map').setView([48.117266, -1.6777926], 9);
+/**
+ * Initialize the map with all components
+ */
+const initializeMap = () => {
+  // Create base map
+  map = L.map('map').setView(MAP_CENTER, DEFAULT_ZOOM);
 
+  // Add tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
-  // Create heatmap layer with city population data
+  // Add heatmap layer
   heatLayer = L.heatLayer(getHeatData(), {
     radius: 40,
     blur: 15,
@@ -398,68 +507,18 @@ onMounted(() => {
     max: 5,
   }).addTo(map);
 
-  // Add city labels
+  // Add map components
   addCityLabels();
+  addCityMarkers();
+  addLegend();
+  
+  // Load GeoJSON data
+  loadDepartmentBoundaries();
+};
 
-  // Add clickable markers for all cities that show population on click
-  cities.forEach((city) => {
-    L.marker([city.lat, city.lng], { opacity: 0 })
-      .bindPopup(
-        `
-        <b>${city.name}</b><br>
-        Population: ${city.population.toLocaleString()}<br>
-        Type: ${city.type}
-      `,
-      )
-      .addTo(map);
-  });
-
-  // Add legend
-  const legend = L.control({ position: 'bottomright' });
-  legend.onAdd = function () {
-    const div = L.DomUtil.create('div', 'info legend');
-    div.style.backgroundColor = 'white';
-    div.style.padding = '8px';
-    div.style.borderRadius = '4px';
-    div.style.border = '1px solid #ccc';
-
-    // Create gradient legend
-    div.innerHTML = '<h4>Population Density</h4>';
-
-    // Add gradient bar
-    const gradientBar =
-      '<div style="width:100%; height:20px; background: linear-gradient(to right, #00f, #0f0, #ff0, #f00);"></div>';
-
-    // Add labels
-    div.innerHTML +=
-      gradientBar +
-      '<div style="display:flex; justify-content:space-between; margin-top:5px;">' +
-      '<span>Low</span>' +
-      '<span>Medium</span>' +
-      '<span>High</span>' +
-      '</div>';
-    return div;
-  };
-  legend.addTo(map);
-
-  fetch(
-    'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson',
-  )
-    .then((res) => res.json())
-    .then((geojsonData) => {
-      L.geoJSON(geojsonData, {
-        filter: (feature) => feature.properties.code === '35',
-        style: {
-          color: 'rgba(255, 123, 255, 0.2)',
-          weight: 5,
-          fillOpacity: 0,
-        },
-      }).addTo(map);
-
-      // Load communes after department boundary is loaded
-      loadCommunesGeoJSON();
-    })
-    .catch((err) => console.error('Erreur chargement GeoJSON :', err));
+// Lifecycle hooks
+onMounted(() => {
+  initializeMap();
 });
 
 onUnmounted(() => {
