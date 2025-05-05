@@ -1,5 +1,6 @@
 const http = require("http");
 const app = require("./app");
+const connectDB = require('./db');
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
@@ -36,6 +37,7 @@ const errorHandler = (error) => {
   }
 };
 
+connectDB();
 const server = http.createServer(app);
 
 server.on("error", errorHandler);

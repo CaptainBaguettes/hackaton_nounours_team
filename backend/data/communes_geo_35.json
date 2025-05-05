@@ -4,2330 +4,2663 @@
     "population": "7 051",
     "latitude": 48.1334474,
     "longitude": -1.5341182,
-    "code_commune": "35001"
+    "code_commune": "35001",
+    "nb_medecins": 5
   },
   {
     "nom": "Amanlis",
     "population": "1 806",
     "latitude": 48.0061864,
     "longitude": -1.4764193,
-    "code_commune": "35002"
+    "code_commune": "35002",
+    "nb_medecins": 0
   },
   {
     "nom": "Andouillé-Neuville",
     "population": "1 003",
     "latitude": 48.2934964,
     "longitude": -1.5913043,
-    "code_commune": "35003"
+    "code_commune": "35003",
+    "nb_medecins": 0
   },
   {
     "nom": "Arbrissel",
     "population": 290,
     "latitude": 47.9271875,
     "longitude": -1.3038405,
-    "code_commune": "35005"
+    "code_commune": "35005",
+    "nb_medecins": 0
   },
   {
     "nom": "Argentré-du-Plessis",
     "population": "4 678",
     "latitude": 48.0574022,
     "longitude": -1.1525093,
-    "code_commune": "35006"
+    "code_commune": "35006",
+    "nb_medecins": 3
   },
   {
     "nom": "Aubigné",
     "population": 486,
     "latitude": 48.2941715,
     "longitude": -1.6345141,
-    "code_commune": "35007"
+    "code_commune": "35007",
+    "nb_medecins": 8
   },
   {
     "nom": "Availles-sur-Seiche",
     "population": 682,
     "latitude": 47.961372,
     "longitude": -1.1957981,
-    "code_commune": "35008"
+    "code_commune": "35008",
+    "nb_medecins": 0
   },
   {
     "nom": "Baguer-Morvan",
     "population": "1 724",
     "latitude": 48.5249479,
     "longitude": -1.7737509,
-    "code_commune": "35009"
+    "code_commune": "35009",
+    "nb_medecins": 7
   },
   {
     "nom": "Baguer-Pican",
     "population": "1 800",
     "latitude": 48.5530771,
     "longitude": -1.6992081,
-    "code_commune": "35010"
+    "code_commune": "35010",
+    "nb_medecins": 0
   },
   {
     "nom": "Bain-de-Bretagne",
     "population": "7 730",
     "latitude": 47.8414377,
     "longitude": -1.6852229,
-    "code_commune": "35012"
+    "code_commune": "35012",
+    "nb_medecins": 33
   },
   {
     "nom": "Bains-sur-Oust",
     "population": "3 667",
     "latitude": 47.7043242,
     "longitude": -2.0720346,
-    "code_commune": "35013"
+    "code_commune": "35013",
+    "nb_medecins": 1
   },
   {
     "nom": "Bais",
     "population": "2 516",
     "latitude": 48.0102935,
     "longitude": -1.2905825,
-    "code_commune": "35014"
+    "code_commune": "35014",
+    "nb_medecins": 2
   },
   {
     "nom": "Balazé",
     "population": "2 249",
     "latitude": 48.1674793,
     "longitude": -1.1893191,
-    "code_commune": "35015"
+    "code_commune": "35015",
+    "nb_medecins": 4
   },
   {
     "nom": "Baulon",
     "population": "2 254",
     "latitude": 47.9854372,
     "longitude": -1.9315829,
-    "code_commune": "35016"
+    "code_commune": "35016",
+    "nb_medecins": 2
   },
   {
     "nom": "La Baussaine",
     "population": 687,
     "latitude": 48.3129244,
     "longitude": -1.8974199,
-    "code_commune": "35017"
+    "code_commune": "35017",
+    "nb_medecins": 0
   },
   {
     "nom": "La Bazouge-du-Désert",
     "population": "1 087",
     "latitude": 48.4438604,
     "longitude": -1.1050784,
-    "code_commune": "35018"
+    "code_commune": "35018",
+    "nb_medecins": 0
   },
   {
     "nom": "Bazouges-la-Pérouse",
     "population": "1 893",
     "latitude": 48.4263498,
     "longitude": -1.5744163,
-    "code_commune": "35019"
+    "code_commune": "35019",
+    "nb_medecins": 4
   },
   {
     "nom": "Beaucé",
     "population": "1 366",
     "latitude": 48.3390316,
     "longitude": -1.1555522,
-    "code_commune": "35021"
+    "code_commune": "35021",
+    "nb_medecins": 0
   },
   {
     "nom": "Bécherel",
     "population": 706,
     "latitude": 48.2949905,
     "longitude": -1.9440559,
-    "code_commune": "35022"
+    "code_commune": "35022",
+    "nb_medecins": 3
   },
   {
     "nom": "Bédée",
     "population": "4 584",
     "latitude": 48.1799946,
     "longitude": -1.9448081,
-    "code_commune": "35023"
+    "code_commune": "35023",
+    "nb_medecins": 3
   },
   {
     "nom": "Betton",
     "population": "12 959",
     "latitude": 48.1817122,
     "longitude": -1.6414898,
-    "code_commune": "35024"
+    "code_commune": "35024",
+    "nb_medecins": 24
   },
   {
     "nom": "Billé",
     "population": "1 083",
     "latitude": 48.2874903,
     "longitude": -1.2462281,
-    "code_commune": "35025"
+    "code_commune": "35025",
+    "nb_medecins": 0
   },
   {
     "nom": "Bléruais",
     "population": 106,
     "latitude": 48.110922,
     "longitude": -2.1263482,
-    "code_commune": "35026"
+    "code_commune": "35026",
+    "nb_medecins": 0
   },
   {
     "nom": "Boisgervilly",
     "population": "1 790",
     "latitude": 48.1670889,
     "longitude": -2.0651766,
-    "code_commune": "35027"
+    "code_commune": "35027",
+    "nb_medecins": 0
   },
   {
     "nom": "Boistrudan",
     "population": 733,
     "latitude": 47.9697818,
     "longitude": -1.4013536,
-    "code_commune": "35028"
+    "code_commune": "35028",
+    "nb_medecins": 0
   },
   {
     "nom": "Bonnemain",
     "population": "1 552",
     "latitude": 48.4673615,
     "longitude": -1.7654466,
-    "code_commune": "35029"
+    "code_commune": "35029",
+    "nb_medecins": 3
   },
   {
     "nom": "La Bosse-de-Bretagne",
     "population": 710,
     "latitude": 47.8699764,
     "longitude": -1.5980251,
-    "code_commune": "35030"
+    "code_commune": "35030",
+    "nb_medecins": 0
   },
   {
     "nom": "La Bouëxière",
     "population": "4 664",
     "latitude": 48.1838953,
     "longitude": -1.437582,
-    "code_commune": "35031"
+    "code_commune": "35031",
+    "nb_medecins": 6
   },
   {
     "nom": "Bourg-des-Comptes",
     "population": "3 419",
     "latitude": 47.9298273,
     "longitude": -1.7388742,
-    "code_commune": "35033"
+    "code_commune": "35033",
+    "nb_medecins": 5
   },
   {
     "nom": "Bourgbarré",
     "population": "4 646",
     "latitude": 47.9958761,
     "longitude": -1.6162609,
-    "code_commune": "35032"
+    "code_commune": "35032",
+    "nb_medecins": 4
   },
   {
     "nom": "La Boussac",
     "population": "1 250",
     "latitude": 48.513174,
     "longitude": -1.6605339,
-    "code_commune": "35034"
+    "code_commune": "35034",
+    "nb_medecins": 1
   },
   {
     "nom": "Bovel",
     "population": 603,
     "latitude": 47.95038,
     "longitude": -1.977089,
-    "code_commune": "35035"
+    "code_commune": "35035",
+    "nb_medecins": 0
   },
   {
     "nom": "Bréal-sous-Montfort",
     "population": "6 569",
     "latitude": 48.0513567,
     "longitude": -1.867686,
-    "code_commune": "35037"
+    "code_commune": "35037",
+    "nb_medecins": 8
   },
   {
     "nom": "Bréal-sous-Vitré",
     "population": 641,
     "latitude": 48.104433,
     "longitude": -1.060228,
-    "code_commune": "35038"
+    "code_commune": "35038",
+    "nb_medecins": 127
   },
   {
     "nom": "Brécé",
     "population": "2 191",
     "latitude": 48.1102058,
     "longitude": -1.4817649,
-    "code_commune": "35039"
+    "code_commune": "35039",
+    "nb_medecins": 0
   },
   {
     "nom": "Breteil",
     "population": "3 749",
     "latitude": 48.1459113,
     "longitude": -1.8996064,
-    "code_commune": "35040"
+    "code_commune": "35040",
+    "nb_medecins": 4
   },
   {
     "nom": "Brie",
     "population": "1 029",
     "latitude": 47.9510829,
     "longitude": -1.5375662,
-    "code_commune": "35041"
+    "code_commune": "35041",
+    "nb_medecins": 0
   },
   {
     "nom": "Brielles",
     "population": 695,
     "latitude": 48.0083592,
     "longitude": -1.0891656,
-    "code_commune": "35042"
+    "code_commune": "35042",
+    "nb_medecins": 0
   },
   {
     "nom": "Broualan",
     "population": 406,
     "latitude": 48.4741568,
     "longitude": -1.6502827,
-    "code_commune": "35044"
+    "code_commune": "35044",
+    "nb_medecins": 0
   },
   {
     "nom": "Bruc-sur-Aff",
     "population": 876,
     "latitude": 47.8148914,
     "longitude": -2.0193402,
-    "code_commune": "35045"
+    "code_commune": "35045",
+    "nb_medecins": 0
   },
   {
     "nom": "Les Brulais",
     "population": 544,
     "latitude": 47.8888664,
     "longitude": -2.0425928,
-    "code_commune": "35046"
+    "code_commune": "35046",
+    "nb_medecins": 0
   },
   {
     "nom": "Bruz",
     "population": "20 118",
     "latitude": 48.0245814,
     "longitude": -1.7471629,
-    "code_commune": "35047"
+    "code_commune": "35047",
+    "nb_medecins": 96
   },
   {
     "nom": "Cancale",
     "population": "5 529",
     "latitude": 48.6771721,
     "longitude": -1.8506953,
-    "code_commune": "35049"
+    "code_commune": "35049",
+    "nb_medecins": 9
   },
   {
     "nom": "Cardroc",
     "population": 616,
     "latitude": 48.2855421,
     "longitude": -1.8886507,
-    "code_commune": "35050"
+    "code_commune": "35050",
+    "nb_medecins": 0
   },
   {
     "nom": "Cesson-Sévigné",
     "population": "18 212",
     "latitude": 48.1197799,
     "longitude": -1.6038829,
-    "code_commune": "35051"
+    "code_commune": "35051",
+    "nb_medecins": 337
   },
   {
     "nom": "Champeaux",
     "population": 518,
     "latitude": 48.147609,
     "longitude": -1.3115291,
-    "code_commune": "35052"
+    "code_commune": "35052",
+    "nb_medecins": 0
   },
   {
     "nom": "Chanteloup",
     "population": "1 897",
     "latitude": 47.965855,
     "longitude": -1.6153163,
-    "code_commune": "35054"
+    "code_commune": "35054",
+    "nb_medecins": 0
   },
   {
     "nom": "Chantepie",
     "population": "10 391",
     "latitude": 48.088155,
     "longitude": -1.6171482,
-    "code_commune": "35055"
+    "code_commune": "35055",
+    "nb_medecins": 56
   },
   {
     "nom": "La Chapelle-aux-Filtzméens",
     "population": 844,
     "latitude": 48.3838349,
     "longitude": -1.8246691,
-    "code_commune": "35056"
+    "code_commune": "35056",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-Bouëxic",
     "population": "1 545",
     "latitude": 47.9286216,
     "longitude": -1.9402261,
-    "code_commune": "35057"
+    "code_commune": "35057",
+    "nb_medecins": 1
   },
   {
     "nom": "La Chapelle-Chaussée",
     "population": "1 323",
     "latitude": 48.2707381,
     "longitude": -1.8532806,
-    "code_commune": "35058"
+    "code_commune": "35058",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-de-Brain",
     "population": "1 078",
     "latitude": 47.6997445,
     "longitude": -1.9344425,
-    "code_commune": "35064"
+    "code_commune": "35064",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-des-Fougeretz",
     "population": "4 696",
     "latitude": 48.178066,
     "longitude": -1.7341163,
-    "code_commune": "35059"
+    "code_commune": "35059",
+    "nb_medecins": 5
   },
   {
     "nom": "La Chapelle du Lou du Lac",
     "population": "1 044",
     "latitude": 48.2128193,
     "longitude": -1.9982217,
-    "code_commune": "35060"
+    "code_commune": "35060",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-Erbrée",
     "population": 742,
     "latitude": 48.1408228,
     "longitude": -1.100599,
-    "code_commune": "35061"
+    "code_commune": "35061",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-Janson",
     "population": "1 523",
     "latitude": 48.3475174,
     "longitude": -1.1011605,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-Saint-Aubert",
     "population": 463,
     "latitude": 48.3129927,
     "longitude": -1.307644,
-    "code_commune": "35063"
+    "code_commune": "35063",
+    "nb_medecins": 0
   },
   {
     "nom": "La Chapelle-Thouarault",
     "population": "2 294",
     "latitude": 48.1247951,
     "longitude": -1.8645101,
-    "code_commune": "35065"
+    "code_commune": "35065",
+    "nb_medecins": 0
   },
   {
     "nom": "Chartres-de-Bretagne",
     "population": "8 377",
     "latitude": 48.0432406,
     "longitude": -1.7082369,
-    "code_commune": "35066"
+    "code_commune": "35066",
+    "nb_medecins": 12
   },
   {
     "nom": "Chasné-sur-Illet",
     "population": "1 677",
     "latitude": 48.2425777,
     "longitude": -1.5626114,
-    "code_commune": "35067"
+    "code_commune": "35067",
+    "nb_medecins": 0
   },
   {
     "nom": "Châteaubourg",
     "population": "7 668",
     "latitude": 48.1108554,
     "longitude": -1.3982411,
-    "code_commune": "35068"
+    "code_commune": "35068",
+    "nb_medecins": 14
   },
   {
     "nom": "Châteaugiron",
     "population": "10 780",
     "latitude": 48.0423764,
     "longitude": -1.500912,
-    "code_commune": "35069"
+    "code_commune": "35069",
+    "nb_medecins": 54
   },
   {
     "nom": "Châteauneuf-d'Ille-et-Vilaine",
     "population": "1 715",
     "latitude": 48.5619684,
     "longitude": -1.9286313,
-    "code_commune": "35070"
+    "code_commune": "35070",
+    "nb_medecins": 6
   },
   {
     "nom": "Le Châtellier",
     "population": 440,
     "latitude": 48.4158632,
     "longitude": -1.2537728,
-    "code_commune": "35071"
+    "code_commune": "35071",
+    "nb_medecins": 0
   },
   {
     "nom": "Châtillon-en-Vendelais",
     "population": "1 736",
     "latitude": 48.225424,
     "longitude": -1.1793931,
-    "code_commune": "35072"
+    "code_commune": "35072",
+    "nb_medecins": 1
   },
   {
     "nom": "Chauvigné",
     "population": 835,
     "latitude": 48.3768976,
     "longitude": -1.459779,
-    "code_commune": "35075"
+    "code_commune": "35075",
+    "nb_medecins": 0
   },
   {
     "nom": "Chavagne",
     "population": "4 476",
     "latitude": 48.0539088,
     "longitude": -1.7881749,
-    "code_commune": "35076"
+    "code_commune": "35076",
+    "nb_medecins": 4
   },
   {
     "nom": "Chelun",
     "population": 355,
     "latitude": 47.8538848,
     "longitude": -1.2234963,
-    "code_commune": "35077"
+    "code_commune": "35077",
+    "nb_medecins": 0
   },
   {
     "nom": "Cherrueix",
     "population": "1 117",
     "latitude": 48.6060853,
     "longitude": -1.7110157,
-    "code_commune": "35078"
+    "code_commune": "35078",
+    "nb_medecins": 1
   },
   {
     "nom": "Chevaigné",
     "population": "2 414",
     "latitude": 48.2120161,
     "longitude": -1.6303916,
-    "code_commune": "35079"
+    "code_commune": "35079",
+    "nb_medecins": 2
   },
   {
     "nom": "Cintré",
     "population": "2 600",
     "latitude": 48.1058654,
     "longitude": -1.8712888,
-    "code_commune": "35080"
+    "code_commune": "35080",
+    "nb_medecins": 2
   },
   {
     "nom": "Clayes",
     "population": 969,
     "latitude": 48.1781142,
     "longitude": -1.8543417,
-    "code_commune": "35081"
+    "code_commune": "35081",
+    "nb_medecins": 0
   },
   {
     "nom": "Coësmes",
     "population": "1 478",
     "latitude": 47.8830309,
     "longitude": -1.4410994,
-    "code_commune": "35082"
+    "code_commune": "35082",
+    "nb_medecins": 0
   },
   {
     "nom": "Comblessac",
     "population": 693,
     "latitude": 47.8765171,
     "longitude": -2.0841863,
-    "code_commune": "35084"
+    "code_commune": "35084",
+    "nb_medecins": 0
   },
   {
     "nom": "Combourg",
     "population": "6 326",
     "latitude": 48.4104391,
     "longitude": -1.7500622,
-    "code_commune": "35085"
+    "code_commune": "35085",
+    "nb_medecins": 53
   },
   {
     "nom": "Combourtillé",
     "population": 622,
     "latitude": 48.2721354,
     "longitude": -1.2466018,
-    "code_commune": "35086"
+    "code_commune": "35086",
+    "nb_medecins": 0
   },
   {
     "nom": "Cornillé",
     "population": 996,
     "latitude": 48.080314,
     "longitude": -1.3082492,
-    "code_commune": "35087"
+    "code_commune": "35087",
+    "nb_medecins": 0
   },
   {
     "nom": "Corps-Nuds",
     "population": "3 621",
     "latitude": 47.9775099,
     "longitude": -1.5874103,
-    "code_commune": "35088"
+    "code_commune": "35088",
+    "nb_medecins": 5
   },
   {
     "nom": "La Couyère",
     "population": 457,
     "latitude": 47.8877284,
     "longitude": -1.5058141,
-    "code_commune": "35089"
+    "code_commune": "35089",
+    "nb_medecins": 0
   },
   {
     "nom": "Crevin",
     "population": "2 867",
     "latitude": 47.9374005,
     "longitude": -1.6629333,
-    "code_commune": "35090"
+    "code_commune": "35090",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Crouais",
     "population": 600,
     "latitude": 48.2072762,
     "longitude": -2.1401299,
-    "code_commune": "35091"
+    "code_commune": "35091",
+    "nb_medecins": 0
   },
   {
     "nom": "Cuguen",
     "population": 842,
     "latitude": 48.4502079,
     "longitude": -1.6661021,
-    "code_commune": "35092"
+    "code_commune": "35092",
+    "nb_medecins": 0
   },
   {
     "nom": "Dinard",
     "population": "10 753",
     "latitude": 48.6320379,
     "longitude": -2.0580178,
-    "code_commune": "35093"
+    "code_commune": "35093",
+    "nb_medecins": 48
   },
   {
     "nom": "Dingé",
     "population": "1 704",
     "latitude": 48.3571687,
     "longitude": -1.7155792,
-    "code_commune": "35094"
+    "code_commune": "35094",
+    "nb_medecins": 0
   },
   {
     "nom": "Dol-de-Bretagne",
     "population": "6 114",
     "latitude": 48.5498295,
     "longitude": -1.754257,
-    "code_commune": "35095"
+    "code_commune": "35095",
+    "nb_medecins": 19
   },
   {
     "nom": "Domagné",
     "population": "2 485",
     "latitude": 48.0706593,
     "longitude": -1.3918429,
-    "code_commune": "35096"
+    "code_commune": "35096",
+    "nb_medecins": 3
   },
   {
     "nom": "Domalain",
     "population": "2 067",
     "latitude": 47.996247,
     "longitude": -1.2414842,
-    "code_commune": "35097"
+    "code_commune": "35097",
+    "nb_medecins": 0
   },
   {
     "nom": "La Dominelais",
     "population": "1 432",
     "latitude": 47.7627462,
     "longitude": -1.6873923,
-    "code_commune": "35098"
+    "code_commune": "35098",
+    "nb_medecins": 0
   },
   {
     "nom": "Domloup",
     "population": "3 863",
     "latitude": 48.0626279,
     "longitude": -1.5236949,
-    "code_commune": "35099"
+    "code_commune": "35099",
+    "nb_medecins": 4
   },
   {
     "nom": "Dourdain",
     "population": "1 246",
     "latitude": 48.1928158,
     "longitude": -1.3696313,
-    "code_commune": "35101"
+    "code_commune": "35101",
+    "nb_medecins": 0
   },
   {
     "nom": "Drouges",
     "population": 514,
     "latitude": 47.9013296,
     "longitude": -1.266358,
-    "code_commune": "35102"
+    "code_commune": "35102",
+    "nb_medecins": 0
   },
   {
     "nom": "Eancé",
     "population": 436,
     "latitude": 47.822195,
     "longitude": -1.2443964,
-    "code_commune": "35103"
+    "code_commune": "35103",
+    "nb_medecins": 0
   },
   {
     "nom": "Epiniac",
     "population": "1 443",
     "latitude": 48.5100394,
     "longitude": -1.6972808,
-    "code_commune": "35104"
+    "code_commune": "35104",
+    "nb_medecins": 0
   },
   {
     "nom": "Erbrée",
     "population": "1 764",
     "latitude": 48.09827,
     "longitude": -1.1249516,
-    "code_commune": "35105"
+    "code_commune": "35105",
+    "nb_medecins": 0
   },
   {
     "nom": "Ercé-en-Lamée",
     "population": "1 572",
     "latitude": 47.830364,
     "longitude": -1.5611201,
-    "code_commune": "35106"
+    "code_commune": "35106",
+    "nb_medecins": 3
   },
   {
     "nom": "Ercé-près-Liffré",
     "population": "2 024",
     "latitude": 48.2561002,
     "longitude": -1.514468,
-    "code_commune": "35107"
+    "code_commune": "35107",
+    "nb_medecins": 17
   },
   {
     "nom": "Essé",
     "population": "1 056",
     "latitude": 47.9574503,
     "longitude": -1.4242263,
-    "code_commune": "35108"
+    "code_commune": "35108",
+    "nb_medecins": 0
   },
   {
     "nom": "Étrelles",
     "population": "2 709",
     "latitude": 48.0601694,
     "longitude": -1.1938644,
-    "code_commune": "35109"
+    "code_commune": "35109",
+    "nb_medecins": 2
   },
   {
     "nom": "Feins",
     "population": "1 077",
     "latitude": 48.3290212,
     "longitude": -1.6415472,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Ferré",
     "population": 731,
     "latitude": 48.4915544,
     "longitude": -1.2921567,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Fleurigné",
     "population": 944,
     "latitude": 48.3358786,
     "longitude": -1.1211449,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Forges-la-Forêt",
     "population": 265,
     "latitude": 47.8619159,
     "longitude": -1.2793479,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Fougères",
     "population": "21 247",
     "latitude": 48.3503362,
     "longitude": -1.1958526,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 183
   },
   {
     "nom": "La Fresnais",
     "population": "2 577",
     "latitude": 48.5952811,
     "longitude": -1.8437735,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Gaël",
     "population": "1 641",
     "latitude": 48.1321352,
     "longitude": -2.2228673,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Gahard",
     "population": "1 559",
     "latitude": 48.2974956,
     "longitude": -1.5183894,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Gennes-sur-Seiche",
     "population": 960,
     "latitude": 47.9885433,
     "longitude": -1.1235595,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Gévezé",
     "population": "6 000",
     "latitude": 48.2204891,
     "longitude": -1.7896366,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 7
   },
   {
     "nom": "Gosné",
     "population": "2 085",
     "latitude": 48.2459917,
     "longitude": -1.4626276,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "La Gouesnière",
     "population": "2 012",
     "latitude": 48.6048797,
     "longitude": -1.8925099,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Goven",
     "population": "4 394",
     "latitude": 48.0054828,
     "longitude": -1.8476016,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Grand-Fougeray",
     "population": "2 502",
     "latitude": 47.7234217,
     "longitude": -1.7323074,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "La Guerche-de-Bretagne",
     "population": "4 461",
     "latitude": 47.9426332,
     "longitude": -1.231454,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 10
   },
   {
     "nom": "Guichen",
     "population": "9 160",
     "latitude": 47.9659271,
     "longitude": -1.7970987,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 11
   },
   {
     "nom": "Guignen",
     "population": "4 172",
     "latitude": 47.9205654,
     "longitude": -1.8613166,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Guipel",
     "population": "1 759",
     "latitude": 48.2982871,
     "longitude": -1.7201512,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Guipry-Messac",
     "population": "7 340",
     "latitude": 47.8257106,
     "longitude": -1.8172916,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Hédé-Bazouges",
     "population": "2 323",
     "latitude": 48.2958022,
     "longitude": -1.8022682,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "L' Hermitage",
     "population": "4 767",
     "latitude": 48.1243,
     "longitude": -1.8183,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Hirel",
     "population": "1 415",
     "latitude": 48.606156,
     "longitude": -1.8019488,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Iffendic",
     "population": "4 686",
     "latitude": 48.1290768,
     "longitude": -2.0336601,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Les Iffs",
     "population": 284,
     "latitude": 48.2880565,
     "longitude": -1.8667945,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Irodouër",
     "population": "2 318",
     "latitude": 48.2493529,
     "longitude": -1.9492734,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Janzé",
     "population": "8 744",
     "latitude": 47.9556915,
     "longitude": -1.495366,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 32
   },
   {
     "nom": "Javené",
     "population": "2 238",
     "latitude": 48.3199378,
     "longitude": -1.2174729,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Laignelet",
     "population": "1 231",
     "latitude": 48.3714929,
     "longitude": -1.147739,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Laillé",
     "population": "5 276",
     "latitude": 47.9784056,
     "longitude": -1.7199066,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Lalleu",
     "population": 575,
     "latitude": 47.8560914,
     "longitude": -1.5106027,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Landavran",
     "population": 710,
     "latitude": 48.1583425,
     "longitude": -1.2887297,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Landéan",
     "population": "1 227",
     "latitude": 48.412152,
     "longitude": -1.15324,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Landujan",
     "population": 944,
     "latitude": 48.2507903,
     "longitude": -1.9957796,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Langan",
     "population": "1 094",
     "latitude": 48.245019,
     "longitude": -1.853596,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Langon",
     "population": "1 385",
     "latitude": 47.720466,
     "longitude": -1.8499601,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Langouet",
     "population": 619,
     "latitude": 48.249746,
     "longitude": -1.8219965,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Lanrigan",
     "population": 154,
     "latitude": 48.3962361,
     "longitude": -1.6991371,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Lassy",
     "population": "1 842",
     "latitude": 47.979291,
     "longitude": -1.8699811,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Lécousse",
     "population": "3 423",
     "latitude": 48.3683827,
     "longitude": -1.2177018,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Lieuron",
     "population": 812,
     "latitude": 47.8513715,
     "longitude": -1.9430551,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Liffré",
     "population": "8 646",
     "latitude": 48.2145992,
     "longitude": -1.5059748,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 17
   },
   {
     "nom": "Lillemer",
     "population": 390,
     "latitude": 48.5642894,
     "longitude": -1.8612135,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Livré-sur-Changeon",
     "population": "1 770",
     "latitude": 48.218484,
     "longitude": -1.3425681,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Lohéac",
     "population": 694,
     "latitude": 47.8666607,
     "longitude": -1.8854748,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Longaulnay",
     "population": 616,
     "latitude": 48.3095942,
     "longitude": -1.9392869,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Loroux",
     "population": 646,
     "latitude": 48.3948164,
     "longitude": -1.0635018,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Lourmais",
     "population": 336,
     "latitude": 48.4492668,
     "longitude": -1.7280059,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Loutehel",
     "population": 245,
     "latitude": 47.9355273,
     "longitude": -2.0800138,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Louvigné-de-Bais",
     "population": "1 925",
     "latitude": 48.0481109,
     "longitude": -1.3316285,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 7
   },
   {
     "nom": "Louvigné-du-Désert",
     "population": "3 392",
     "latitude": 48.4815182,
     "longitude": -1.1231428,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Luitré-Dompierre",
     "population": "1 849",
     "latitude": 48.2828612,
     "longitude": -1.1373331,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Maen Roch",
     "population": "5 188",
     "latitude": 48.3973839,
     "longitude": -1.3402979,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 8
   },
   {
     "nom": "Marcillé-Raoul",
     "population": 735,
     "latitude": 48.3860094,
     "longitude": -1.6073494,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Marcillé-Robert",
     "population": 987,
     "latitude": 47.9513589,
     "longitude": -1.3559138,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Marpiré",
     "population": "1 045",
     "latitude": 48.1411828,
     "longitude": -1.3407965,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Martigné-Ferchaud",
     "population": "2 664",
     "latitude": 47.8313035,
     "longitude": -1.317543,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Maxent",
     "population": "1 480",
     "latitude": 47.9823348,
     "longitude": -2.0331515,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Mecé",
     "population": 621,
     "latitude": 48.2372846,
     "longitude": -1.3027437,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Médréac",
     "population": "1 874",
     "latitude": 48.267486,
     "longitude": -2.066007,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Meillac",
     "population": "1 978",
     "latitude": 48.4117502,
     "longitude": -1.8118487,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Melesse",
     "population": "7 368",
     "latitude": 48.2175823,
     "longitude": -1.6962403,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Mellé",
     "population": 661,
     "latitude": 48.48786,
     "longitude": -1.188294,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Mernel",
     "population": "1 028",
     "latitude": 47.8979494,
     "longitude": -1.969386,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Mesnil-Roc'h",
     "population": "4 508",
     "latitude": 48.4638042,
     "longitude": -1.8741672,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 7
   },
   {
     "nom": "La Mézière",
     "population": "5 026",
     "latitude": 48.2193772,
     "longitude": -1.7557922,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Mézières-sur-Couesnon",
     "population": "1 772",
     "latitude": 48.294563,
     "longitude": -1.4323826,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Miniac-Morvan",
     "population": "4 394",
     "latitude": 48.5150492,
     "longitude": -1.8995937,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Miniac-sous-Bécherel",
     "population": 812,
     "latitude": 48.2850548,
     "longitude": -1.9301556,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Le Minihic-sur-Rance",
     "population": "1 525",
     "latitude": 48.5762792,
     "longitude": -2.0122162,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Mondevert",
     "population": 832,
     "latitude": 48.0843838,
     "longitude": -1.0986973,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Mont-Dol",
     "population": "1 108",
     "latitude": 48.5700826,
     "longitude": -1.7683797,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Montauban-de-Bretagne",
     "population": "6 630",
     "latitude": 48.1998838,
     "longitude": -2.0462319,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 12
   },
   {
     "nom": "Montautour",
     "population": 269,
     "latitude": 48.2043862,
     "longitude": -1.1460727,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Monterfil",
     "population": "1 385",
     "latitude": 48.0652825,
     "longitude": -1.9793057,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Montfort-sur-Meu",
     "population": "6 911",
     "latitude": 48.1372782,
     "longitude": -1.955145,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 17
   },
   {
     "nom": "Montgermont",
     "population": "3 760",
     "latitude": 48.1557367,
     "longitude": -1.7162062,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Monthault",
     "population": 254,
     "latitude": 48.5109103,
     "longitude": -1.1803505,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Montreuil-des-Landes",
     "population": 239,
     "latitude": 48.2476357,
     "longitude": -1.2241461,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Montreuil-le-Gast",
     "population": "2 056",
     "latitude": 48.2468262,
     "longitude": -1.7269551,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Montreuil-sous-Pérouse",
     "population": "1 073",
     "latitude": 48.1510819,
     "longitude": -1.2381136,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Montreuil-sur-Ille",
     "population": "2 457",
     "latitude": 48.306459,
     "longitude": -1.6710597,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Mordelles",
     "population": "7 783",
     "latitude": 48.0733304,
     "longitude": -1.8485204,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 52
   },
   {
     "nom": "Mouazé",
     "population": "1 770",
     "latitude": 48.2323558,
     "longitude": -1.6106784,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Moulins",
     "population": 740,
     "latitude": 48.0030682,
     "longitude": -1.3729482,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Moussé",
     "population": 338,
     "latitude": 47.9244804,
     "longitude": -1.2704183,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Moutiers",
     "population": 936,
     "latitude": 47.9670665,
     "longitude": -1.2136646,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Muel",
     "population": 897,
     "latitude": 48.1275743,
     "longitude": -2.1573255,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "La Noë-Blanche",
     "population": "1 032",
     "latitude": 47.8034377,
     "longitude": -1.7407534,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "La Nouaye",
     "population": 358,
     "latitude": 48.1625529,
     "longitude": -1.9795561,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Nouvoitou",
     "population": "3 613",
     "latitude": 48.0414284,
     "longitude": -1.548064,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Noyal-Châtillon-sur-Seiche",
     "population": "7 713",
     "latitude": 48.0425725,
     "longitude": -1.6619865,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 17
   },
   {
     "nom": "Noyal-sous-Bazouges",
     "population": 380,
     "latitude": 48.4129746,
     "longitude": -1.6255484,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Noyal-sur-Vilaine",
     "population": "6 262",
     "latitude": 48.1140789,
     "longitude": -1.5234735,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 7
   },
   {
     "nom": "Orgères",
     "population": "5 535",
     "latitude": 48.0031858,
     "longitude": -1.6679484,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Pacé",
     "population": "12 257",
     "latitude": 48.1465726,
     "longitude": -1.7728997,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 36
   },
   {
     "nom": "Paimpont",
     "population": "1 824",
     "latitude": 48.0193594,
     "longitude": -2.1735324,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Pancé",
     "population": "1 208",
     "latitude": 47.881204,
     "longitude": -1.659786,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Parcé",
     "population": 650,
     "latitude": 48.2728516,
     "longitude": -1.2008152,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Parigné",
     "population": "1 346",
     "latitude": 48.4278782,
     "longitude": -1.1933455,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Parthenay-de-Bretagne",
     "population": "1 819",
     "latitude": 48.192815,
     "longitude": -1.8307019,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Pertre",
     "population": "1 401",
     "latitude": 48.0349573,
     "longitude": -1.0366391,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Le Petit-Fougeray",
     "population": 903,
     "latitude": 47.9276912,
     "longitude": -1.6083077,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Pipriac",
     "population": "3 947",
     "latitude": 47.8088832,
     "longitude": -1.9462224,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Piré-Chancé",
     "population": "3 173",
     "latitude": 48.014581,
     "longitude": -1.4298582,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Pléchâtel",
     "population": "2 817",
     "latitude": 47.8947671,
     "longitude": -1.7496755,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Pleine-Fougères",
     "population": "2 002",
     "latitude": 48.5336672,
     "longitude": -1.5638065,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 7
   },
   {
     "nom": "Plélan-le-Grand",
     "population": "4 131",
     "latitude": 48.0023864,
     "longitude": -2.1003629,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 22
   },
   {
     "nom": "Plerguer",
     "population": "2 884",
     "latitude": 48.5272074,
     "longitude": -1.8461116,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Plesder",
     "population": 792,
     "latitude": 48.4131974,
     "longitude": -1.924034,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Pleugueneuc",
     "population": "2 055",
     "latitude": 48.3980709,
     "longitude": -1.9033194,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Pleumeleuc",
     "population": "3 581",
     "latitude": 48.1844169,
     "longitude": -1.9191125,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Pleurtuit",
     "population": "7 077",
     "latitude": 48.5815,
     "longitude": -2.05912,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 12
   },
   {
     "nom": "Pocé-les-Bois",
     "population": "1 375",
     "latitude": 48.1148138,
     "longitude": -1.2499442,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Poilley",
     "population": 371,
     "latitude": 48.4657176,
     "longitude": -1.262138,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Poligné",
     "population": "1 262",
     "latitude": 47.8871864,
     "longitude": -1.6867712,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Pont-Péan",
     "population": "4 442",
     "latitude": 48.0131094,
     "longitude": -1.7023101,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Les Portes du Coglais",
     "population": "2 301",
     "latitude": 48.4522606,
     "longitude": -1.334495,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Princé",
     "population": 405,
     "latitude": 48.2167788,
     "longitude": -1.0895169,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Québriac",
     "population": "1 630",
     "latitude": 48.3438911,
     "longitude": -1.826988,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Quédillac",
     "population": "1 272",
     "latitude": 48.2500916,
     "longitude": -2.1423914,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Rannée",
     "population": "1 104",
     "latitude": 47.924362,
     "longitude": -1.240552,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Redon",
     "population": "10 054",
     "latitude": 47.6510682,
     "longitude": -2.0842143,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 114
   },
   {
     "nom": "Renac",
     "population": "1 059",
     "latitude": 47.7196296,
     "longitude": -1.9755319,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Rennes",
     "population": "229 178",
     "latitude": 48.1113387,
     "longitude": -1.6800198,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2566
   },
   {
     "nom": "Retiers",
     "population": "4 632",
     "latitude": 47.9128732,
     "longitude": -1.3818706,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Le Rheu",
     "population": "9 771",
     "latitude": 48.1006715,
     "longitude": -1.7937675,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 12
   },
   {
     "nom": "La Richardais",
     "population": "2 625",
     "latitude": 48.6068393,
     "longitude": -2.0348424,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Rimou",
     "population": 352,
     "latitude": 48.3990758,
     "longitude": -1.5148721,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Rives-du-Couesnon",
     "population": "2 961",
     "latitude": 48.2878106,
     "longitude": -1.3372993,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Romagné",
     "population": "2 498",
     "latitude": 48.3421592,
     "longitude": -1.2754346,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Romazy",
     "population": 271,
     "latitude": 48.3760497,
     "longitude": -1.4976331,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Romillé",
     "population": "4 196",
     "latitude": 48.2153539,
     "longitude": -1.89245,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Roz-Landrieux",
     "population": "1 398",
     "latitude": 48.543527,
     "longitude": -1.815425,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Roz-sur-Couesnon",
     "population": "1 031",
     "latitude": 48.5884457,
     "longitude": -1.5917533,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Sains",
     "population": 466,
     "latitude": 48.5513314,
     "longitude": -1.5845373,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Armel",
     "population": "2 312",
     "latitude": 48.0141082,
     "longitude": -1.5912374,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Saint-Aubin-d'Aubigné",
     "population": "4 249",
     "latitude": 48.2630217,
     "longitude": -1.607077,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 8
   },
   {
     "nom": "Saint-Aubin-des-Landes",
     "population": 953,
     "latitude": 48.0941566,
     "longitude": -1.2959963,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Aubin-du-Cormier",
     "population": "4 293",
     "latitude": 48.2577823,
     "longitude": -1.4024515,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 9
   },
   {
     "nom": "Saint-Benoît-des-Ondes",
     "population": 996,
     "latitude": 48.6204307,
     "longitude": -1.8531685,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Briac-sur-Mer",
     "population": "2 273",
     "latitude": 48.6183398,
     "longitude": -2.1327847,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Saint-Brieuc-des-Iffs",
     "population": 335,
     "latitude": 48.2915813,
     "longitude": -1.851314,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Broladre",
     "population": "1 171",
     "latitude": 48.5873125,
     "longitude": -1.655408,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Saint-Christophe-de-Valains",
     "population": 236,
     "latitude": 48.3425865,
     "longitude": -1.4468697,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Christophe-des-Bois",
     "population": 566,
     "latitude": 48.226219,
     "longitude": -1.2502891,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Coulomb",
     "population": "2 993",
     "latitude": 48.6755188,
     "longitude": -1.9114049,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Saint-Didier",
     "population": "2 081",
     "latitude": 48.0950018,
     "longitude": -1.3713111,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Domineuc",
     "population": "2 600",
     "latitude": 48.3727602,
     "longitude": -1.8760754,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Saint-Erblon",
     "population": "3 542",
     "latitude": 48.0181129,
     "longitude": -1.651345,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 2
   },
   {
     "nom": "Saint-Ganton",
     "population": 430,
     "latitude": 47.755026,
     "longitude": -1.8845537,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Georges-de-Gréhaigne",
     "population": 376,
     "latitude": 48.5683469,
     "longitude": -1.5484882,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Georges-de-Reintembault",
     "population": "1 531",
     "latitude": 48.5090243,
     "longitude": -1.2430491,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Germain-du-Pinel",
     "population": "1 007",
     "latitude": 48.0115522,
     "longitude": -1.1662593,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Germain-en-Coglès",
     "population": "2 118",
     "latitude": 48.4051522,
     "longitude": -1.2641198,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Germain-sur-Ille",
     "population": "1 020",
     "latitude": 48.2489955,
     "longitude": -1.6594173,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Gilles",
     "population": "5 473",
     "latitude": 48.1539357,
     "longitude": -1.8299928,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 13
   },
   {
     "nom": "Saint-Gondran",
     "population": 616,
     "latitude": 48.2674317,
     "longitude": -1.8352742,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Gonlay",
     "population": 385,
     "latitude": 48.1133696,
     "longitude": -2.065623,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Grégoire",
     "population": "10 206",
     "latitude": 48.1524129,
     "longitude": -1.685398,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 440
   },
   {
     "nom": "Saint-Guinoux",
     "population": "1 251",
     "latitude": 48.575156,
     "longitude": -1.882342,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Hilaire-des-Landes",
     "population": "1 051",
     "latitude": 48.3516396,
     "longitude": -1.357093,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Jacques-de-la-Lande",
     "population": "13 782",
     "latitude": 48.0806436,
     "longitude": -1.7135029,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 63
   },
   {
     "nom": "Saint-Jean-sur-Vilaine",
     "population": "1 394",
     "latitude": 48.1172885,
     "longitude": -1.3604736,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Jouan-des-Guérets",
     "population": "2 874",
     "latitude": 48.5991065,
     "longitude": -1.9730216,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Saint-Just",
     "population": "1 109",
     "latitude": 47.7653026,
     "longitude": -1.961162,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Léger-des-Prés",
     "population": 306,
     "latitude": 48.3963826,
     "longitude": -1.6528397,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Lunaire",
     "population": "2 612",
     "latitude": 48.6354993,
     "longitude": -2.1090269,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Saint-M'Hervé",
     "population": "1 398",
     "latitude": 48.1784037,
     "longitude": -1.1169757,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Saint-Malo",
     "population": "48 609",
     "latitude": 48.649518,
     "longitude": -2.0260409,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 668
   },
   {
     "nom": "Saint-Malo-de-Phily",
     "population": "1 086",
     "latitude": 47.8767402,
     "longitude": -1.7882282,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 668
   },
   {
     "nom": "Saint-Malon-sur-Mel",
     "population": 610,
     "latitude": 48.0933722,
     "longitude": -2.0976082,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 668
   },
   {
     "nom": "Saint-Marc-le-Blanc",
     "population": "1 631",
     "latitude": 48.3772015,
     "longitude": -1.4027566,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Marcan",
     "population": 442,
     "latitude": 48.5882274,
     "longitude": -1.6321115,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Maugan",
     "population": 543,
     "latitude": 48.134636,
     "longitude": -2.0829661,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Médard-sur-Ille",
     "population": "1 342",
     "latitude": 48.2730464,
     "longitude": -1.6601833,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Méen-le-Grand",
     "population": "4 759",
     "latitude": 48.1894709,
     "longitude": -2.1911338,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 22
   },
   {
     "nom": "Saint-Méloir-des-Ondes",
     "population": "4 693",
     "latitude": 48.6380887,
     "longitude": -1.9051339,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Saint-Onen-la-Chapelle",
     "population": "1 138",
     "latitude": 48.1773634,
     "longitude": -2.173272,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Ouen-des-Alleux",
     "population": "1 348",
     "latitude": 48.3281078,
     "longitude": -1.4256954,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 5
   },
   {
     "nom": "Saint-Péran",
     "population": 422,
     "latitude": 48.0545538,
     "longitude": -2.0564374,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Père-Marc-en-Poulet",
     "population": "2 509",
     "latitude": 48.5881364,
     "longitude": -1.9243628,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Pern",
     "population": "1 057",
     "latitude": 48.2884779,
     "longitude": -1.9870775,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Saint-Rémy-du-Plain",
     "population": 823,
     "latitude": 48.3692905,
     "longitude": -1.5714023,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Sauveur-des-Landes",
     "population": "1 577",
     "latitude": 48.3430352,
     "longitude": -1.3138696,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Saint-Séglin",
     "population": 593,
     "latitude": 47.853679,
     "longitude": -2.0058134,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Senoux",
     "population": "1 867",
     "latitude": 47.9049712,
     "longitude": -1.7881315,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Suliac",
     "population": "1 013",
     "latitude": 48.5699597,
     "longitude": -1.9733807,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Sulpice-des-Landes",
     "population": 846,
     "latitude": 47.7665513,
     "longitude": -1.622647,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Sulpice-la-Forêt",
     "population": "1 539",
     "latitude": 48.2192441,
     "longitude": -1.5791541,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Saint-Symphorien",
     "population": 662,
     "latitude": 48.2913925,
     "longitude": -1.8251627,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Thual",
     "population": "1 000",
     "latitude": 48.337293,
     "longitude": -1.933277,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Thurial",
     "population": "2 194",
     "latitude": 48.0293427,
     "longitude": -1.931223,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saint-Uniac",
     "population": 531,
     "latitude": 48.1730402,
     "longitude": -2.0288616,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Sainte-Anne-sur-Vilaine",
     "population": "1 053",
     "latitude": 47.7308213,
     "longitude": -1.8265906,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Sainte-Colombe",
     "population": 370,
     "latitude": 47.8868719,
     "longitude": -1.4552194,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Sainte-Marie",
     "population": "2 331",
     "latitude": 47.6945161,
     "longitude": -2.0005955,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Saulnières",
     "population": 811,
     "latitude": 47.9154697,
     "longitude": -1.5889099,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Sel-de-Bretagne",
     "population": "1 134",
     "latitude": 47.8956742,
     "longitude": -1.6116559,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "La Selle-en-Luitré",
     "population": 631,
     "latitude": 48.3104211,
     "longitude": -1.1268962,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "La Selle-Guerchaise",
     "population": 163,
     "latitude": 47.9449058,
     "longitude": -1.1745286,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Sens-de-Bretagne",
     "population": "2 641",
     "latitude": 48.332872,
     "longitude": -1.5359128,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Servon-sur-Vilaine",
     "population": "3 953",
     "latitude": 48.121469,
     "longitude": -1.4603703,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Sixt-sur-Aff",
     "population": "2 208",
     "latitude": 47.7760854,
     "longitude": -2.0803355,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Sougeal",
     "population": 547,
     "latitude": 48.5101221,
     "longitude": -1.5230205,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Taillis",
     "population": "1 043",
     "latitude": 48.1890235,
     "longitude": -1.2395239,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Talensac",
     "population": "2 583",
     "latitude": 48.1092798,
     "longitude": -1.9269063,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 3
   },
   {
     "nom": "Teillay",
     "population": "1 110",
     "latitude": 47.8065354,
     "longitude": -1.5378472,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Theil-de-Bretagne",
     "population": "1 742",
     "latitude": 47.9204169,
     "longitude": -1.4293785,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Thorigné-Fouillard",
     "population": "8 782",
     "latitude": 48.1535233,
     "longitude": -1.5800238,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 15
   },
   {
     "nom": "Thourie",
     "population": 878,
     "latitude": 47.8554606,
     "longitude": -1.4800723,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Tiercent",
     "population": 193,
     "latitude": 48.3499201,
     "longitude": -1.4071551,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Tinténiac",
     "population": "4 044",
     "latitude": 48.3293178,
     "longitude": -1.8352875,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 11
   },
   {
     "nom": "Torcé",
     "population": "1 270",
     "latitude": 48.0620743,
     "longitude": -1.2673254,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Trans-la-Forêt",
     "population": 633,
     "latitude": 48.4969674,
     "longitude": -1.5899561,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Treffendel",
     "population": "1 350",
     "latitude": 48.041297,
     "longitude": -2.0090611,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Trémeheuc",
     "population": 360,
     "latitude": 48.425325,
     "longitude": -1.7036514,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Tresbœuf",
     "population": "1 254",
     "latitude": 47.8836136,
     "longitude": -1.5450634,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Trévérien",
     "population": 923,
     "latitude": 48.3711548,
     "longitude": -1.9287951,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Trimer",
     "population": 210,
     "latitude": 48.340866,
     "longitude": -1.892165,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Tronchet",
     "population": "1 214",
     "latitude": 48.4862442,
     "longitude": -1.838977,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Val-Couesnon",
     "population": "4 194",
     "latitude": 48.4408905,
     "longitude": -1.4566868,
-    "code_commune": "35004"
+    "code_commune": "35004",
+    "nb_medecins": 16
   },
   {
     "nom": "Val d'Anast",
     "population": "4 013",
     "latitude": 47.9002239,
     "longitude": -2.0224623,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 6
   },
   {
     "nom": "Val-d'Izé",
     "population": "2 649",
     "latitude": 48.1772441,
     "longitude": -1.3018405,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 4
   },
   {
     "nom": "Vergéal",
     "population": 823,
     "latitude": 48.0362768,
     "longitude": -1.2659042,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Le Verger",
     "population": "1 445",
     "latitude": 48.0700479,
     "longitude": -1.9320335,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 1
   },
   {
     "nom": "Vern-sur-Seiche",
     "population": "8 384",
     "latitude": 48.0452053,
     "longitude": -1.6045972,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 25
   },
   {
     "nom": "Vezin-le-Coquet",
     "population": "6 411",
     "latitude": 48.1195379,
     "longitude": -1.75711,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 9
   },
   {
     "nom": "Vieux-Viel",
     "population": 329,
     "latitude": 48.5114519,
     "longitude": -1.5446441,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Vieux-Vy-sur-Couesnon",
     "population": "1 295",
     "latitude": 48.342522,
     "longitude": -1.4882078,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Vignoc",
     "population": "2 236",
     "latitude": 48.248742,
     "longitude": -1.7840405,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Villamée",
     "population": 300,
     "latitude": 48.4609708,
     "longitude": -1.2210889,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "La Ville-ès-Nonais",
     "population": "1 248",
     "latitude": 48.547514,
     "longitude": -1.952415,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Visseiche",
     "population": 864,
     "latitude": 47.955623,
     "longitude": -1.300508,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   },
   {
     "nom": "Vitré",
     "population": "19 553",
     "latitude": 48.1244503,
     "longitude": -1.214331,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 127
   },
   {
     "nom": "Le Vivier-sur-Mer",
     "population": "1 072",
     "latitude": 48.602433,
     "longitude": -1.7754575,
-    "code_commune": ""
+    "code_commune": "",
+    "nb_medecins": 0
   }
 ]
