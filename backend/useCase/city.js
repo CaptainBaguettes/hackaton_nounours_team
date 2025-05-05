@@ -8,7 +8,14 @@ const City = require('../models/City');
  */
 const createCity = async (req, res) => {
   try {
-    const city = await City.create(req.body);
+    const { name, latitude, longitude, nb_population, nb_doctors } = req.body;
+    const city = await City.create({
+      name,
+      latitude,
+      longitude,
+      nb_population,
+      nb_doctors
+    });
     res.status(201).json(city);
   } catch (error) {
     console.error('Error creating city:', error);
