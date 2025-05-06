@@ -13,8 +13,8 @@ POC
 - **CAROL Alexandre**: 🗺️ Interactive Map, 🔍 Data Research, 📱 App and Data
 
 ### B2
-- **RAKKAZ Hafsa**: 🎨 Figma Prototype, 🔍 Data Research
-- **SKRZYPCZAK Anthony**: 🗺️ Interactive Map, 🔍 Data Research
+- **RAKKAZ Hafsa**: 🎨 Figma Prototype, 🔍 Data Research, 📱 App and Data
+- **SKRZYPCZAK Anthony**: 🗺️ Interactive Map, 🔍 Data Research, 📱 App and Data
 
 ### B1
 - **MARTINEAU Lilian**: 🔍 Data Research, 🗺️ Interactive Map, 📄 Readme
