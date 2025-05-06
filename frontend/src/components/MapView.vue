@@ -3,269 +3,11 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet.heat';
+import { fetchCities } from '../api/getData.js';
 
-// Extended data for cities in Ille-et-Vilaine
-const cities = [
-  // Major cities
-  {
-    name: 'Rennes',
-    lat: 48.117266,
-    lng: -1.6777926,
-    population: 215366,
-    type: 'city',
-  },
-  {
-    name: 'Saint-Malo',
-    lat: 48.649337,
-    lng: -2.025674,
-    population: 46097,
-    type: 'city',
-  },
-  {
-    name: 'Fougères',
-    lat: 48.351067,
-    lng: -1.204567,
-    population: 20189,
-    type: 'city',
-  },
-  {
-    name: 'Vitré',
-    lat: 48.123889,
-    lng: -1.215278,
-    population: 17677,
-    type: 'city',
-  },
-  // Medium towns
-  { name: 'Redon', lat: 47.65, lng: -2.083333, population: 8867, type: 'town' },
-  {
-    name: 'Dinard',
-    lat: 48.633333,
-    lng: -2.05,
-    population: 9916,
-    type: 'town',
-  },
-  {
-    name: 'Bruz',
-    lat: 48.023333,
-    lng: -1.744444,
-    population: 18364,
-    type: 'town',
-  },
-  {
-    name: 'Cesson-Sévigné',
-    lat: 48.119722,
-    lng: -1.604444,
-    population: 17843,
-    type: 'town',
-  },
-  // Additional municipalities
-  {
-    name: 'Saint-Grégoire',
-    lat: 48.14,
-    lng: -1.6883,
-    population: 9600,
-    type: 'town',
-  },
-  {
-    name: 'Betton',
-    lat: 48.1786,
-    lng: -1.6442,
-    population: 11200,
-    type: 'town',
-  },
-  {
-    name: 'Chantepie',
-    lat: 48.0908,
-    lng: -1.5986,
-    population: 10500,
-    type: 'town',
-  },
-  {
-    name: 'Chartres-de-Bretagne',
-    lat: 48.0464,
-    lng: -1.7189,
-    population: 7800,
-    type: 'town',
-  },
-  { name: 'Pacé', lat: 48.1331, lng: -1.7756, population: 11300, type: 'town' },
-  {
-    name: 'Saint-Jacques-de-la-Lande',
-    lat: 48.0872,
-    lng: -1.71,
-    population: 8900,
-    type: 'town',
-  },
-  {
-    name: 'Vern-sur-Seiche',
-    lat: 48.0497,
-    lng: -1.5794,
-    population: 8000,
-    type: 'town',
-  },
-  {
-    name: 'Acigné',
-    lat: 48.1394,
-    lng: -1.5294,
-    population: 7000,
-    type: 'town',
-  },
-  {
-    name: 'Mordelles',
-    lat: 48.0725,
-    lng: -1.8517,
-    population: 7200,
-    type: 'town',
-  },
-  {
-    name: 'Noyal-sur-Vilaine',
-    lat: 48.1194,
-    lng: -1.5275,
-    population: 5700,
-    type: 'town',
-  },
-  { name: 'Janzé', lat: 47.9592, lng: -1.4903, population: 8300, type: 'town' },
-  {
-    name: 'Bain-de-Bretagne',
-    lat: 47.8414,
-    lng: -1.6839,
-    population: 7700,
-    type: 'town',
-  },
-  {
-    name: 'Guichen',
-    lat: 47.9886,
-    lng: -1.8047,
-    population: 8300,
-    type: 'town',
-  },
-  {
-    name: 'Liffré',
-    lat: 48.2103,
-    lng: -1.5064,
-    population: 7500,
-    type: 'town',
-  },
-  {
-    name: 'Châteaubourg',
-    lat: 48.1106,
-    lng: -1.4053,
-    population: 6400,
-    type: 'town',
-  },
-  {
-    name: 'La Guerche-de-Bretagne',
-    lat: 47.9422,
-    lng: -1.2306,
-    population: 4300,
-    type: 'town',
-  },
-  {
-    name: 'Dol-de-Bretagne',
-    lat: 48.5483,
-    lng: -1.7497,
-    population: 5600,
-    type: 'town',
-  },
-  {
-    name: 'Combourg',
-    lat: 48.4097,
-    lng: -1.75,
-    population: 5800,
-    type: 'town',
-  },
-  {
-    name: 'Melesse',
-    lat: 48.2203,
-    lng: -1.6586,
-    population: 6600,
-    type: 'town',
-  },
-  // Additional smaller towns and villages
-  {
-    name: 'Saint-Aubin-du-Cormier',
-    lat: 48.2587,
-    lng: -1.3992,
-    population: 3800,
-    type: 'small town',
-  },
-  {
-    name: 'Pleurtuit',
-    lat: 48.5819,
-    lng: -2.0428,
-    population: 6200,
-    type: 'town',
-  },
-  {
-    name: 'Cancale',
-    lat: 48.6781,
-    lng: -1.8528,
-    population: 5300,
-    type: 'town',
-  },
-  {
-    name: 'Saint-Méen-le-Grand',
-    lat: 48.1883,
-    lng: -2.1931,
-    population: 4200,
-    type: 'town',
-  },
-  {
-    name: 'Montauban-de-Bretagne',
-    lat: 48.1958,
-    lng: -2.0503,
-    population: 5100,
-    type: 'town',
-  },
-  {
-    name: 'Montfort-sur-Meu',
-    lat: 48.1383,
-    lng: -1.9542,
-    population: 6700,
-    type: 'town',
-  },
-  {
-    name: 'Argentré-du-Plessis',
-    lat: 48.0575,
-    lng: -1.1569,
-    population: 4400,
-    type: 'town',
-  },
-  {
-    name: 'Retiers',
-    lat: 47.9167,
-    lng: -1.3833,
-    population: 4200,
-    type: 'town',
-  },
-  {
-    name: 'Pipriac',
-    lat: 47.8294,
-    lng: -1.9444,
-    population: 3700,
-    type: 'small town',
-  },
-  {
-    name: 'Maure-de-Bretagne',
-    lat: 47.9263,
-    lng: -2.0098,
-    population: 3300,
-    type: 'small town',
-  },
-  {
-    name: 'Tinténiac',
-    lat: 48.3087,
-    lng: -1.8412,
-    population: 3500,
-    type: 'small town',
-  },
-  {
-    name: "Saint-Aubin-d'Aubigné",
-    lat: 48.2352,
-    lng: -1.571,
-    population: 3600,
-    type: 'small town',
-  },
-];
+// Reactive cities data
+const cities = ref([]);
+const boundariesVisible = ref(true); // Reactive variable to track boundary visibility
 
 // Type definitions
 interface GeoJsonFeature {
@@ -287,21 +29,32 @@ interface GeoJsonData {
 let map: L.Map;
 let heatLayer: any;
 let cityMarkers: L.Marker[] = [];
+let departmentLayer: L.GeoJSON | null = null; // Store department boundaries layer
+let communesLayer: L.GeoJSON | null = null; // Store communes boundaries layer
 
 // Constants
 const DEPARTMENT_CODE = '35';
 const MAP_CENTER = [48.117266, -1.6777926];
-const DEFAULT_ZOOM = 9;
+const DEFAULT_ZOOM = 10;
 const DEPARTMENT_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson';
 const COMMUNES_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes-version-simplifiee.geojson';
 
 /**
- * Generates data for the heatmap based on city population
+ * Generates data for the heatmap based on the population-per-doctor ratio
  */
 const getHeatData = () => {
-  return cities.map((city) => {
-    const intensity = Math.log10(city.population) * 0.8;
-    return [city.lat, city.lng, intensity];
+  return cities.value.map((city: any) => {
+    let intensity;
+    if (city.populationPerDoctor === null || city.populationPerDoctor >= 1000) {
+      intensity = 0.1; // Red for cities with population per doctor >= 1000
+    } else if (city.populationPerDoctor >= 500 && city.populationPerDoctor < 1000) {
+      intensity = 0.4; // Yellow for cities with 2 doctors per 1000 citizens
+    } else if (city.populationPerDoctor >= 333 && city.populationPerDoctor < 500) {
+      intensity = 0.7; // Green for cities with 3 doctors per 1000 citizens
+    } else {
+      intensity = 1.0; // Blue for cities with 4+ doctors per 1000 citizens
+    }
+    return [city.latitude, city.longitude, intensity];
   });
 };
 
@@ -309,9 +62,9 @@ const getHeatData = () => {
  * Adds labels for major cities
  */
 const addCityLabels = () => {
-  cities.forEach((city) => {
-    if (city.population > 15000) {
-      const marker = L.marker([city.lat, city.lng], {
+  cities.value.forEach((city: any) => {
+    if (city.nb_population > 15000) {
+      const marker = L.marker([city.latitude, city.longitude], {
         opacity: 0.01,
       })
         .bindTooltip(city.name, {
@@ -320,7 +73,7 @@ const addCityLabels = () => {
           className: 'city-label',
         })
         .addTo(map);
-      
+
       cityMarkers.push(marker);
     }
   });
@@ -330,13 +83,25 @@ const addCityLabels = () => {
  * Creates and adds markers for all cities with population info
  */
 const addCityMarkers = () => {
-  cities.forEach((city) => {
-    L.marker([city.lat, city.lng], { opacity: 0 })
-      .bindPopup(`
+  cities.value.forEach((city: any) => {
+    L.marker([city.latitude, city.longitude], { opacity: 0 })
+      .bindTooltip(
+        `
         <b>${city.name}</b><br>
-        Population: ${city.population.toLocaleString()}<br>
-        Type: ${city.type}
-      `)
+        Population: ${city.nb_population.toLocaleString()}<br>
+        Doctors: ${city.nb_doctors}<br>
+        Doctors per 1000 inhabitants: ${
+          city.populationPerDoctor !== null
+            ? (1000 / city.populationPerDoctor).toFixed(2)
+            : 'N/A'
+        }
+      `,
+        {
+          permanent: false, // Tooltip only shows on hover
+          direction: 'top', // Position the tooltip above the marker
+          className: 'city-tooltip', // Custom class for styling
+        }
+      )
       .addTo(map);
   });
 };
@@ -346,7 +111,7 @@ const addCityMarkers = () => {
  */
 const addLegend = () => {
   const legend = L.control({ position: 'bottomright' });
-  
+
   legend.onAdd = () => {
     const div = L.DomUtil.create('div', 'info legend');
     div.style.backgroundColor = 'white';
@@ -354,24 +119,35 @@ const addLegend = () => {
     div.style.borderRadius = '4px';
     div.style.border = '1px solid #ccc';
 
-    // Create gradient legend
-    div.innerHTML = '<h4>Population Density</h4>';
-
-    // Add gradient bar
-    const gradientBar = '<div style="width:100%; height:20px; background: linear-gradient(to right, #00f, #0f0, #ff0, #f00);"></div>';
-
-    // Add labels
+    div.innerHTML = '<h4>Medical Desert (x nb Doc/1000 hab)</h4>';
+    const gradientBar = '<div style="width:300px; height:20px; background: linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #0000FF);"></div>';
     div.innerHTML +=
       gradientBar +
       '<div style="display:flex; justify-content:space-between; margin-top:5px;">' +
-      '<span>Low</span>' +
-      '<span>Medium</span>' +
-      '<span>High</span>' +
+      '<span>0 Doc/hab</span>' +
+      '<span>1 Doc/hab</span>' +
+      '<span>2 Doc/hab</span>' +
       '</div>';
-    
+
+    // Add toggle boundaries button
+    const toggleButton = document.createElement('button');
+    toggleButton.innerText = 'Toggle Boundaries';
+    toggleButton.style.marginTop = '10px';
+    toggleButton.style.padding = '5px 10px';
+    toggleButton.style.border = '1px solid #ccc';
+    toggleButton.style.borderRadius = '4px';
+    toggleButton.style.backgroundColor = '#f9f9f9';
+    toggleButton.style.cursor = 'pointer';
+
+    toggleButton.addEventListener('click', () => {
+      toggleBoundaries();
+    });
+
+    div.appendChild(toggleButton);
+
     return div;
   };
-  
+
   legend.addTo(map);
 };
 
@@ -389,12 +165,12 @@ const showErrorMessage = (message: string) => {
   errorDiv.style.borderRadius = '4px';
   errorDiv.style.zIndex = '1000';
   errorDiv.innerHTML = message;
-  
+
   const mapElement = document.querySelector('#map');
   if (mapElement) {
     mapElement.appendChild(errorDiv);
   }
-  
+
   // Remove error message after 5 seconds
   setTimeout(() => {
     errorDiv.remove();
@@ -407,18 +183,17 @@ const showErrorMessage = (message: string) => {
 const loadDepartmentBoundaries = async () => {
   try {
     const response = await fetch(DEPARTMENT_GEOJSON_URL);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
+
     const geojsonData: GeoJsonData = await response.json();
-    
-    L.geoJSON(geojsonData, {
+
+    departmentLayer = L.geoJSON(geojsonData, {
       filter: (feature) => feature.properties.code === DEPARTMENT_CODE,
       style: {
-        color: 'rgba(255, 123, 255, 0.2)',
-        weight: 5,
+        weight: 2,
         fillOpacity: 0,
       },
     }).addTo(map);
@@ -436,18 +211,14 @@ const loadDepartmentBoundaries = async () => {
  */
 const loadCommunesGeoJSON = async () => {
   try {
-    console.log('Loading communes GeoJSON...');
-    
     const response = await fetch(COMMUNES_GEOJSON_URL);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
+
     const geojsonData: GeoJsonData = await response.json();
-    console.log('GeoJSON loaded, processing...');
-    
-    // Filter communes in department 35 (Ille-et-Vilaine)
+
     const filteredFeatures = geojsonData.features.filter(feature => {
       if (feature.properties?.code) {
         const deptCode = feature.properties.code.substring(0, 2);
@@ -455,22 +226,14 @@ const loadCommunesGeoJSON = async () => {
       }
       return false;
     });
-    
-    console.log(`Found ${filteredFeatures.length} communes in department ${DEPARTMENT_CODE}`);
-    
-    if (filteredFeatures.length === 0) {
-      console.warn(`No communes found for department ${DEPARTMENT_CODE}`);
-      return;
-    }
-    
-    // Add the filtered communes to the map
-    L.geoJSON(
+
+    communesLayer = L.geoJSON(
       { type: 'FeatureCollection', features: filteredFeatures },
       {
         style: {
-          color: 'rgba(255, 123, 255, 0.5)',
           weight: 1,
-          fillOpacity: 0.2,
+          fillOpacity: 0,
+          opacity: 0.3,
         },
         onEachFeature: (feature, layer) => {
           if (feature.properties?.nom) {
@@ -479,8 +242,6 @@ const loadCommunesGeoJSON = async () => {
         },
       }
     ).addTo(map);
-    
-    console.log('Communes GeoJSON added to map');
   } catch (error) {
     console.error('Error loading communes GeoJSON:', error);
     showErrorMessage(`Failed to load communes: ${error instanceof Error ? error.message : 'Unknown error'}`);
@@ -488,37 +249,151 @@ const loadCommunesGeoJSON = async () => {
 };
 
 /**
+ * Fill areas without data
+ */
+const fillEmptyAreas = async () => {
+  try {
+    const response = await fetch(DEPARTMENT_GEOJSON_URL);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const geojsonData: GeoJsonData = await response.json();
+
+    // Get a set of city codes or names already in the data
+    const existingCityCodes = new Set(cities.value.map((city: any) => city.code));
+
+    // Filter to include only department 35 (Ille-et-Vilaine) and exclude existing cities
+    const filteredFeatures = geojsonData.features.filter(
+      (feature) =>
+        feature.properties?.code === DEPARTMENT_CODE &&
+        !existingCityCodes.has(feature.properties?.code)
+    );
+
+    if (filteredFeatures.length === 0) {
+      console.warn(`No features found for department ${DEPARTMENT_CODE} after filtering.`);
+      return;
+    }
+
+    // Add the GeoJSON layer with a style matching the "no doctors" color
+    L.geoJSON(
+      { type: 'FeatureCollection', features: filteredFeatures },
+      {
+        style: {
+          color: '#FF0000', // Red color for areas with no doctors
+          weight: 0,
+          fillOpacity: 0.2,
+        },
+      }
+    ).addTo(map);
+  } catch (error) {
+    console.error('Error loading GeoJSON for empty areas:', error);
+  }
+};
+
+/**
+ * Toggles the visibility of the boundaries
+ */
+const toggleBoundaries = () => {
+  boundariesVisible.value = !boundariesVisible.value;
+
+  if (departmentLayer) {
+    if (boundariesVisible.value) {
+      map.addLayer(departmentLayer);
+    } else {
+      map.removeLayer(departmentLayer);
+    }
+  }
+
+  if (communesLayer) {
+    if (boundariesVisible.value) {
+      map.addLayer(communesLayer);
+    } else {
+      map.removeLayer(communesLayer);
+    }
+  }
+};
+
+/**
  * Initialize the map with all components
  */
-const initializeMap = () => {
-  // Create base map
-  map = L.map('map').setView(MAP_CENTER, DEFAULT_ZOOM);
+const initializeMap = async () => {
+  // Create base map with locked zoom level
+  map = L.map('map', {
+    center: MAP_CENTER,
+    zoom: DEFAULT_ZOOM,
+    minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
+    maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
+    zoomControl: false,    // Optionally disable zoom controls
+  });
 
   // Add tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
-  // Add heatmap layer
+  // Fill areas without data for department 35
+  await fillEmptyAreas();
+
   heatLayer = L.heatLayer(getHeatData(), {
-    radius: 40,
-    blur: 15,
-    maxZoom: 10,
-    max: 5,
+    radius: 30,
+    blur: 20,
+    maxZoom: 11,
+    max: 10,
+    minOpacity: 0.5,
+    gradient: {
+      0.0: '#FF0000', // Red for population per doctor >= 1000
+      0.3: '#FF0000', // Red for population per doctor >= 1000
+      0.6: '#FFFF00', // Yellow for 2 doctors per 1000 citizens
+      0.7: '#00FF00', // Green for 3 doctors per 1000 citizens
+      1.0: '#0000FF', // Blue for 4+ doctors per 1000 citizens
+    },
   }).addTo(map);
 
   // Add map components
   addCityLabels();
   addCityMarkers();
   addLegend();
-  
-  // Load GeoJSON data
-  loadDepartmentBoundaries();
+};
+
+/**
+ * Fetch cities data from the API and update the map
+ */
+const loadCities = async () => {
+  try {
+    const fetchedCities = await fetchCities();
+    cities.value = fetchedCities;
+
+    // Reinitialize the map with the new data
+    if (map) {
+      if (heatLayer) map.removeLayer(heatLayer);
+      cityMarkers.forEach((marker) => marker.remove());
+      heatLayer = L.heatLayer(getHeatData(), {
+        radius: 40, // Increased radius for smoother heatmap
+        blur: 25,   // Increased blur for better blending
+        maxZoom: 12, // Adjusted max zoom for better visibility
+        max: 5,     // Maximum intensity value for normalization
+        gradient: {
+          0.0: '#FF0000', // Red for cities with no doctors
+          0.33: '#FFFF00', // Yellow
+          0.66: '#00FF00', // Green
+          1.0: '#0000FF', // Blue
+        },
+      }).addTo(map);
+      addCityLabels();
+      addCityMarkers();
+    }
+  } catch (error) {
+    console.error('Error loading cities:', error);
+  }
 };
 
 // Lifecycle hooks
-onMounted(() => {
+onMounted(async () => {
+  await loadCities();
   initializeMap();
+  await loadDepartmentBoundaries();
 });
 
 onUnmounted(() => {
@@ -545,5 +420,14 @@ onUnmounted(() => {
   font-size: 12px;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white,
     -1px 1px 1px white;
+}
+
+.city-tooltip {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 </style>
