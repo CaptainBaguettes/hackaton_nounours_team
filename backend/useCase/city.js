@@ -73,7 +73,7 @@ const getCityById = async (id) => {
   try {
     const city = await City.findById(id);
     if (!city) {
-      throw new Error('City not found');
+      throw new Error('City no>t found');
     }
     return city;
   } catch (error) {
@@ -113,16 +113,17 @@ const updateCity = async (id, updateData) => {
 const deleteCity = async (id) => {
   try {
     const result = await City.findByIdAndDelete(id);
-    
+
     if (!result) {
       throw new Error('City not found');
     }
-    
-    return { message: 'City deleted successfully', id };
+
+    return { message: 'City deleted successfully', id: result._id.toString() };
   } catch (error) {
     throw new Error(`Error deleting city: ${error.message}`);
   }
 };
+
 
 module.exports = {
   createCity,
