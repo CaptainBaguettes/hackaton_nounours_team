@@ -6,6 +6,9 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import JobsView from './views/JobsView.vue'
 import AddJobView from './views/AddJobView.vue'
+import LoginView from './views/LoginView.vue'
+import { Path } from 'leaflet'
+import { createWebHistory } from 'vue-router'
 
 import CandidatureSpontaneeView from './views/CandidatureSpontaneeView.vue'
 import Candidatures from './views/Candidatures.vue'
@@ -21,10 +24,11 @@ const routes = [
   { path: '/candidature_spontanee', component: CandidatureSpontaneeView },
   { path: '/candidatures', component: Candidatures },
 
+  { path: '/login', component: LoginView },
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 })
 
