@@ -7,6 +7,7 @@ import { fetchCities } from '../api/getData.js';
 
 // Reactive cities data
 const cities = ref([]);
+const boundariesVisible = ref(true); // Reactive variable to track boundary visibility
 
 // Type definitions
 interface GeoJsonFeature {
@@ -28,6 +29,8 @@ interface GeoJsonData {
 let map: L.Map;
 let heatLayer: any;
 let cityMarkers: L.Marker[] = [];
+let departmentLayer: L.GeoJSON | null = null; // Store department boundaries layer
+let communesLayer: L.GeoJSON | null = null; // Store communes boundaries layer
 
 // Constants
 const DEPARTMENT_CODE = '35';
@@ -116,7 +119,7 @@ const addLegend = () => {
     div.style.borderRadius = '4px';
     div.style.border = '1px solid #ccc';
 
-    div.innerHTML = '<h4>Medical Desert</h4>';
+    div.innerHTML = '<h4>Medical Desert (x nb Doc/1000 hab)</h4>';
     const gradientBar = '<div style="width:300px; height:20px; background: linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #0000FF);"></div>';
     div.innerHTML +=
       gradientBar +
@@ -125,6 +128,22 @@ const addLegend = () => {
       '<span>1 Doc/hab</span>' +
       '<span>2 Doc/hab</span>' +
       '</div>';
+
+    // Add toggle boundaries button
+    const toggleButton = document.createElement('button');
+    toggleButton.innerText = 'Toggle Boundaries';
+    toggleButton.style.marginTop = '10px';
+    toggleButton.style.padding = '5px 10px';
+    toggleButton.style.border = '1px solid #ccc';
+    toggleButton.style.borderRadius = '4px';
+    toggleButton.style.backgroundColor = '#f9f9f9';
+    toggleButton.style.cursor = 'pointer';
+
+    toggleButton.addEventListener('click', () => {
+      toggleBoundaries();
+    });
+
+    div.appendChild(toggleButton);
 
     return div;
   };
@@ -171,11 +190,10 @@ const loadDepartmentBoundaries = async () => {
 
     const geojsonData: GeoJsonData = await response.json();
 
-    L.geoJSON(geojsonData, {
+    departmentLayer = L.geoJSON(geojsonData, {
       filter: (feature) => feature.properties.code === DEPARTMENT_CODE,
       style: {
-        color: 'rgba(255, 123, 255, 0.2)',
-        weight: 5,
+        weight: 2,
         fillOpacity: 0,
       },
     }).addTo(map);
@@ -193,8 +211,6 @@ const loadDepartmentBoundaries = async () => {
  */
 const loadCommunesGeoJSON = async () => {
   try {
-    console.log('Loading communes GeoJSON...');
-
     const response = await fetch(COMMUNES_GEOJSON_URL);
 
     if (!response.ok) {
@@ -202,9 +218,7 @@ const loadCommunesGeoJSON = async () => {
     }
 
     const geojsonData: GeoJsonData = await response.json();
-    console.log('GeoJSON loaded, processing...');
 
-    // Filter communes in department 35 (Ille-et-Vilaine)
     const filteredFeatures = geojsonData.features.filter(feature => {
       if (feature.properties?.code) {
         const deptCode = feature.properties.code.substring(0, 2);
@@ -213,21 +227,13 @@ const loadCommunesGeoJSON = async () => {
       return false;
     });
 
-    console.log(`Found ${filteredFeatures.length} communes in department ${DEPARTMENT_CODE}`);
-
-    if (filteredFeatures.length === 0) {
-      console.warn(`No communes found for department ${DEPARTMENT_CODE}`);
-      return;
-    }
-
-    // Add the filtered communes to the map
-    L.geoJSON(
+    communesLayer = L.geoJSON(
       { type: 'FeatureCollection', features: filteredFeatures },
       {
         style: {
-          color: 'rgba(255, 123, 255, 1)',
           weight: 1,
           fillOpacity: 0,
+          opacity: 0.3,
         },
         onEachFeature: (feature, layer) => {
           if (feature.properties?.nom) {
@@ -236,8 +242,6 @@ const loadCommunesGeoJSON = async () => {
         },
       }
     ).addTo(map);
-
-    console.log('Communes GeoJSON added to map');
   } catch (error) {
     console.error('Error loading communes GeoJSON:', error);
     showErrorMessage(`Failed to load communes: ${error instanceof Error ? error.message : 'Unknown error'}`);
@@ -279,12 +283,35 @@ const fillEmptyAreas = async () => {
         style: {
           color: '#FF0000', // Red color for areas with no doctors
           weight: 0,
-          fillOpacity: 0.1,
+          fillOpacity: 0.2,
         },
       }
     ).addTo(map);
   } catch (error) {
     console.error('Error loading GeoJSON for empty areas:', error);
+  }
+};
+
+/**
+ * Toggles the visibility of the boundaries
+ */
+const toggleBoundaries = () => {
+  boundariesVisible.value = !boundariesVisible.value;
+
+  if (departmentLayer) {
+    if (boundariesVisible.value) {
+      map.addLayer(departmentLayer);
+    } else {
+      map.removeLayer(departmentLayer);
+    }
+  }
+
+  if (communesLayer) {
+    if (boundariesVisible.value) {
+      map.addLayer(communesLayer);
+    } else {
+      map.removeLayer(communesLayer);
+    }
   }
 };
 
