@@ -44,14 +44,18 @@ git clone
 cd frontend
 npm install
 npm run dev
-cd ../backend
+
+# Ouvrir un nouveau terminal
+cd backend/
 npm install
 npm run start
-OR
-Contact Admin / Owner
+
+# Pour la BD, créer un fichier .env à la racine de backend/ et copier :
 DB_USER=
 DB_PASSWORD=
 DB_NAME=
+
+# Contacter l'admin pour les infos, ou mettre ses propres credentials
 ```
 
 ## 🌟 Possible Evolutions
