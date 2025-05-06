@@ -5,6 +5,7 @@
             <RouterLink to="/jobs" class="nav-button">Offres</RouterLink>
             <RouterLink to="/" class="nav-button">Mairie</RouterLink>
             <RouterLink to="/" class="nav-button">Pharmacie</RouterLink>
+            <RouterLink to="/candidature" class="nav-button">Candidature Spontanée</RouterLink>
         </div>
         <div class="navbar-right">
             <button class="user-login">

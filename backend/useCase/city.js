@@ -50,6 +50,21 @@ const getAllCities = async (req, res) => {
 };
 
 /**
+ * Get all city names
+ * @returns {Promise<Array>} List of city names
+ */
+const getAllCitiesName = async (req, res) => {
+  try {
+    const cities = await City.find().select('name -_id');
+    const cityNames = cities.map(city => city.name);
+    res.status(200).json(cityNames);
+  } catch (error) {
+    console.error(`Error fetching city names: ${error.message}`);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+/**
  * Get a city by ID
  * @param {string} id - City ID
  * @returns {Promise<Object>} City object
@@ -113,6 +128,7 @@ const deleteCity = async (id) => {
 module.exports = {
   createCity,
   getAllCities,
+  getAllCitiesName,
   getCityById,
   updateCity,
   deleteCity
