@@ -13,13 +13,13 @@ POC
 - **CAROL Alexandre**: 🗺️ Interactive Map, 🔍 Data Research, 📱 App and Data
 
 ### B2
-- **RAKKAZ Hafsa**: 🎨 Figma Prototype, 🔍 Data Research
+- **RAKKAZ Hafsa**: 🎨 Figma Prototype, 🔍 Data Research, Roadmap
 - **SKRZYPCZAK Anthony**: 🗺️ Interactive Map, 🔍 Data Research
 
 ### B1
-- **MARTINEAU Lilian**: 🔍 Data Research, 🗺️ Interactive Map, 📄 Readme
-- **MENOURY Ethan**: 🎨 Figma Prototype, 📄 Readme
-- **LUSTIERE Alexandra**: 📝 Test Log
+- **MARTINEAU Lilian**: 🔍 Data Research, 🗺️ Interactive Map, 📄 Readme, MCD, User Story, Roadmap
+- **MENOURY Ethan**: 🎨 Figma Prototype, 📄 Readme, 🔍 Data Research, User Story, Roadmap
+- **LUSTIERE Alexandra**: 📝 Test Log, 🔍 Data Research
 
 ## 💡 Solution Description:
 “App Name” is a prototype application created during the 2025 ESGI X Softeam hackathon. The application is designed to facilitate decision-making for the establishment of medical homes and the allocation of doctors to reduce tensions in medical zones.
