@@ -4,11 +4,8 @@ import MapView from "../components/MapView.vue";
 
 <template>
    <div class="home-view">
-      <!-- Content -->
       <div class="content">
-         <!-- Left Section -->
          <div class="left-section">
-            <!-- Boxes -->
             <div class="boxes">
                <div class="box">
                   <h3>Besoin médical</h3>
@@ -24,29 +21,27 @@ import MapView from "../components/MapView.vue";
                </div>
             </div>
 
-            <!-- Map -->
             <MapView class="map-view" />
          </div>
 
-         <!-- Right Section -->
          <div class="right-section">
             <div class="info-card">
-               <h3>Camion itinérant</h3>
+               <h2>Camion itinérant</h2>
                <p>Maire : Nathalie Appéré</p>
                <p>Commune : Rennes</p>
             </div>
             <div class="info-card">
-               <h3>Permanence Pharmacie</h3>
+               <h2>Permanence Pharmacie</h2>
                <p>Maire : Nathalie Appéré</p>
                <p>Commune : Rennes</p>
             </div>
             <div class="info-card">
-               <h3>Maison de santé</h3>
+               <h2>Maison de santé</h2>
                <p>Maire : Nathalie Appéré</p>
                <p>Commune : Rennes</p>
             </div>
             <div class="button-container">
-               <RouterLink to="/propose-service" class="propose-button">
+               <RouterLink to="/add_job" class="propose-button">
                   Proposer vos services
                </RouterLink>
             </div>
@@ -56,7 +51,6 @@ import MapView from "../components/MapView.vue";
 </template>
 
 <style scoped>
-/* Empêche le scroll global */
 html,
 body {
    margin: 0;
@@ -69,7 +63,7 @@ body {
    height: 90vh;
    display: flex;
    flex-direction: column;
-   overflow: hidden; /* Empêche le scroll dans le composant */
+   overflow: hidden;
 }
 
 .navbar {
@@ -79,6 +73,20 @@ body {
    padding: 10px 20px;
    background-color: #2d3748;
    color: white;
+}
+
+h2 {
+   font-size: 1.5rem;
+   font-weight: bold;
+   color: #2d3748;
+   margin-bottom: 10px;
+}
+
+h3 {
+   font-size: 1.2rem;
+   font-weight: bold;
+   color: #2d3748;
+   margin-bottom: 5px;
 }
 
 .navbar-left button {
@@ -105,7 +113,7 @@ body {
 .content {
    flex: 1;
    display: flex;
-   overflow: hidden; /* Empêche le scroll dans le contenu */
+   overflow: hidden;
 }
 
 .left-section {
