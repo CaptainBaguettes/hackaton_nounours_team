@@ -36,7 +36,8 @@ const createJob = async (req, res) => {
       return res.status(400).json({ error: 'Invalid city' });
     }
 
-    const cityExists = await City.findOne({ name: city.trim() });
+    const sanitizedCity = city.trim().replace(/[$.]/g, '');
+    const cityExists = await City.findOne({ name: sanitizedCity });
     if (!cityExists) {
       return res.status(404).json({ error: 'City not found' });
     }
