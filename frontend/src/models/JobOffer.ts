@@ -1,4 +1,5 @@
 
+
 export class JobOffer {
     id: number;
     title: string;
