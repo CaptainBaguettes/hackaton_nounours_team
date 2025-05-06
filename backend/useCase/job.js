@@ -30,13 +30,15 @@ const createJob = async (req, res) => {
       return res.status(400).json({ error: 'Invalid city' });
     }
     
-    const job = await Job.create({
-        title,
-        description,
+    const jobData = {
+        title: title.trim(),
+        description: description.trim(),
         latitude,
         longitude,
         city,
-    });
+    };
+
+    const job = await Job.create(jobData);
     
     res.status(201).json(job);
   } catch (error) {
