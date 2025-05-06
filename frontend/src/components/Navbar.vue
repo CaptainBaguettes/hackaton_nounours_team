@@ -8,8 +8,11 @@
             <RouterLink to="/" class="nav-button">Mairies</RouterLink>
         </div>
         <div class="navbar-right">
-            <button class="user-login">
-            </button>
+            <RouterLink @click="handlelDisconnect" to="/login" class="user-login">
+                <button>
+                    <p>{{ txt }}</p>
+                </button>
+            </RouterLink>
         </div>
     </nav>
 </template>
@@ -17,6 +20,24 @@
 <script>
 export default {
     name: "Navbar",
+    computed: {
+        data() {
+            return localStorage.getItem("data");
+        },
+        token() {
+            return localStorage.getItem("token");
+        },
+        txt() {
+            return this.token ? "Déconnexion" : "Connexion";
+        }
+    },
+    methods: {
+        handlelDisconnect() {
+            if (this.token) {
+                localStorage.clear();
+            }
+        }
+    },
 };
 </script>
 
