@@ -45,20 +45,20 @@ import { CandidatureStatus } from "../enum/CandidatureStatus";
 export default {
   name: "Candidatures",
   data() {
-    const job = new Candidature(1, "Dev Fullstack", "TS + Node", "Paris", CandidatureStatus.PENDING);
-    const job2 = new Candidature(2, "Dev Frontend", "React + TS", "Lyon", CandidatureStatus.PENDING);
-    const job3 = new Candidature(3, "Dev Backend 3", "Node + TS", "Lille", CandidatureStatus.PENDING);
-    const job4 = new Candidature(4, "Dev Backend 4", "Node + TS", "Lille", CandidatureStatus.VALIDATED);
-    const job5 = new Candidature(5, "Dev Backend 5", "Node + TS", "Lille", CandidatureStatus.REFUSED);
+    const job = new Candidature(1, "Médecin Généraliste", "Consultations et soins", "Rennes", CandidatureStatus.PENDING);
+    const job2 = new Candidature(2, "Camion itinérant", "Interventions chirurgicales", "Acigné", CandidatureStatus.PENDING);
+    const job3 = new Candidature(3, "Maison de santé", "Soins", "Le Châtellier", CandidatureStatus.PENDING);
+    const job4 = new Candidature(4, "Médecin Généraliste", "Consultations et soin", "Chelun", CandidatureStatus.VALIDATED);
+    const job5 = new Candidature(5, "Médecin Généraliste", "Consultations et soin", "La Guerche-de-Bretagne", CandidatureStatus.REFUSED);
     
     return {
       jobs: [job, job2, job3, job4, job5],
       selectedStatus: "",
       headers: [
-        { text: "Titre", value: "title" },
-        { text: "Description", value: "description" },
-        { text: "Lieu", value: "location" },
-        { text: "Statut", value: "status" },
+        { title: "Titre", value: "title" },
+        { title: "Description", value: "description" },
+        { title: "Lieu", value: "location" },
+        { title: "Statut", value: "status" },
       ],
     };
   },
@@ -77,7 +77,7 @@ export default {
       return list.map(job => ({
         title: job.title,
         description: job.description,
-        location: job.location,
+        location: job.city,
         status: job.status,
       }));
     },

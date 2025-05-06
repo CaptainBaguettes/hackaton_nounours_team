@@ -12,6 +12,52 @@
           <template #item.dateCreated="{ item }">
             {{ new Date(item.dateCreated).toLocaleDateString() }}
           </template>
+          
+          <!-- Ajouter un template pour les header tooltips -->
+          <template #header.title="{ column }">
+            <v-tooltip location="top" max-width="300">
+              <template v-slot:activator="{ props }">
+                <span v-bind="props">{{ column.title }}</span>
+              </template>
+              <span>Titre de l'offre d'emploi</span>
+            </v-tooltip>
+          </template>
+          
+          <template #header.description="{ column }">
+            <v-tooltip location="top" max-width="300">
+              <template v-slot:activator="{ props }">
+                <span v-bind="props">{{ column.title }}</span>
+              </template>
+              <span>Description détaillée du poste proposé</span>
+            </v-tooltip>
+          </template>
+          
+          <template #header.city="{ column }">
+            <v-tooltip location="top" max-width="300">
+              <template v-slot:activator="{ props }">
+                <span v-bind="props">{{ column.title }}</span>
+              </template>
+              <span>Ville où se situe l'offre d'emploi</span>
+            </v-tooltip>
+          </template>
+          
+          <template #header.dailyAssignment="{ column }">
+            <v-tooltip location="top" max-width="300">
+              <template v-slot:activator="{ props }">
+                <span v-bind="props">{{ column.title }}</span>
+              </template>
+              <span>Affluence de patients par jour</span>
+            </v-tooltip>
+          </template>
+          
+          <template #header.dateCreated="{ column }">
+            <v-tooltip location="top" max-width="300">
+              <template v-slot:activator="{ props }">
+                <span v-bind="props">{{ column.title }}</span>
+              </template>
+              <span>Date de publication de l'offre</span>
+            </v-tooltip>
+          </template>
         </v-data-table>
       </v-col>
 
@@ -42,22 +88,39 @@ import { JobOffer } from "../models/JobOffer";
 export default {
   name: "JobsView",
   data() {
-    const job1 = new JobOffer(1, "Développement Fullstack", "Fullstack Dev", "Paris", 10, new Date("2024-04-01"));
-    const job2 = new JobOffer(2, "Frontend React", "Frontend Dev", "Lyon", 5, new Date("2024-05-01"));
+    const job1 = new JobOffer(1, "Médecin", "Médecin généraliste", "Rennes", 10, new Date("2024-04-01"));
+    const job2 = new JobOffer(2, "Kiné", "Kinésithérapeute", "Bain-de-Bretagne", 5, new Date("2024-05-01"));
 
     return {
-      jobs: [job1, job2],
+      jobs: [
+      job1,
+      job2,
+      new JobOffer(3, "Médecin généraliste", "Consultations générales", "Rennes", 15, new Date("2024-06-01")),
+      new JobOffer(4, "Permanence Pharmacie", "Assistance en pharmacie", "Crevin", 8, new Date("2024-06-05")),
+      new JobOffer(5, "Permanence cabinet", "Accueil et gestion des patients", "Cesson-Sévigné", 10, new Date("2024-06-10")),
+      new JobOffer(6, "Médecin généraliste", "Consultations générales", "Fougères", 12, new Date("2024-06-15")),
+      new JobOffer(7, "Permanence Pharmacie", "Assistance en pharmacie", "Vitré", 7, new Date("2024-06-20")),
+      new JobOffer(8, "Permanence cabinet", "Accueil et gestion des patients", "Saint-Malo", 9, new Date("2024-06-25")),
+      new JobOffer(9, "Médecin généraliste", "Consultations générales", "Redon", 14, new Date("2024-07-01")),
+      new JobOffer(10, "Permanence Pharmacie", "Assistance en pharmacie", "Dinard", 6, new Date("2024-07-05")),
+      new JobOffer(11, "Permanence cabinet", "Accueil et gestion des patients", "Combourg", 11, new Date("2024-07-10")),
+      new JobOffer(12, "Médecin généraliste", "Consultations générales", "Janzé", 13, new Date("2024-07-15")),
+      new JobOffer(13, "Permanence Pharmacie", "Assistance en pharmacie", "Guichen", 5, new Date("2024-07-20")),
+      new JobOffer(14, "Permanence cabinet", "Accueil et gestion des patients", "Betton", 8, new Date("2024-07-25")),
+      new JobOffer(15, "Médecin généraliste", "Consultations générales", "Châteaubourg", 10, new Date("2024-08-01")),
+      new JobOffer(16, "Permanence Pharmacie", "Assistance en pharmacie", "Thorigné-Fouillard", 7, new Date("2024-08-05")),
+    ],
       sortOrder: "",
       sortOptions: [
         { label: "Date de publication croissante", value: "asc" },
         { label: "Date de publication décroissante", value: "desc" },
       ],
       headers: [
-        { text: "Titre", value: "title" },
-        { text: "Description", value: "description" },
-        { text: "Lieu", value: "city" },
-        { text: "Jours par semaine", value: "dailyAssignment" },
-        { text: "Date de création", value: "dateCreated" },
+        { title: "Titre", key: "title", align: "start", width: "15%" },
+        { title: "Description", key: "description", align: "start", width: "35%" },
+        { title: "Lieu", key: "city", align: "start", width: "15%" },
+        { title: "Affluence par jour", key: "dailyAssignment", align: "center", width: "15%" },
+        { title: "Date de création", key: "dateCreated", align: "center", width: "20%" },
       ],
     };
   },
