@@ -80,11 +80,13 @@
             </div>
          </div>
       </div>
-      <button class="submit-button">Publier</button>
+      <RouterLink to="/jobs" class="submit-button">Publier</RouterLink>
    </div>
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
    name: "AddJobView",
 };
@@ -164,6 +166,10 @@ textarea {
    border-radius: 4px;
    cursor: pointer;
    font-size: 16px;
+   width: auto;
+   min-width: 50px;
+   max-width: 150px;
+   text-align: center;
 }
 
 .submit-button:hover {
