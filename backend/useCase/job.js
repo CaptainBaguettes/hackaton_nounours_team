@@ -13,34 +13,40 @@ const createJob = async (req, res) => {
   try {
     const { title, description, latitude, longitude, city } = req.body;
     
-    // Validate and sanitize input
     if (!title || typeof title !== 'string') {
       return res.status(400).json({ error: 'Invalid title' });
     }
+    
     if (!description || typeof description !== 'string') {
       return res.status(400).json({ error: 'Invalid description' });
     }
-    if (!latitude || typeof latitude !== 'number') {
+    
+    const parsedLatitude = Number(latitude);
+    if (isNaN(parsedLatitude)) {
       return res.status(400).json({ error: 'Invalid latitude' });
     }
-    if (!longitude || typeof longitude !== 'number') {
+    
+    const parsedLongitude = Number(longitude);
+    if (isNaN(parsedLongitude)) {
       return res.status(400).json({ error: 'Invalid longitude' });
     }
+    
     if (!city || !mongoose.Types.ObjectId.isValid(city)) {
       return res.status(400).json({ error: 'Invalid city' });
     }
     
-    const jobData = {
-        title: title.trim(),
-        description: description.trim(),
-        latitude,
-        longitude,
-        city,
-    };
+    const sanitizedJob = new Job({
+      title: title.trim(),
+      description: description.trim(),
+      latitude: parsedLatitude,
+      longitude: parsedLongitude,
+      city: mongoose.Types.ObjectId(city),
+      createdAt: new Date()
+    });
 
-    const job = await Job.create(jobData);
+    const savedJob = await sanitizedJob.save();
     
-    res.status(201).json(job);
+    res.status(201).json(savedJob);
   } catch (error) {
     console.error('Error creating job:', error);
     res.status(400).json({ error: error.message });
