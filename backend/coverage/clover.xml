@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746525293654" clover="3.2.0">
-  <project timestamp="1746525293654" name="All files">
-    <metrics statements="46" coveredstatements="42" conditionals="18" coveredconditionals="15" methods="5" coveredmethods="5" elements="69" coveredelements="62" complexity="0" loc="46" ncloc="46" packages="2" files="2" classes="2"/>
+<coverage generated="1746526941684" clover="3.2.0">
+  <project timestamp="1746526941684" name="All files">
+    <metrics statements="77" coveredstatements="67" conditionals="24" coveredconditionals="21" methods="9" coveredmethods="7" elements="110" coveredelements="95" complexity="0" loc="77" ncloc="77" packages="2" files="4" classes="4"/>
     <package name="models">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="City.js" path="/home/ftran/Téléchargements/project-bolt-bolt-vue-xhxnftk6/hackaton_nounours_team/backend/models/City.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
+      <file name="User.js" path="/home/ftran/Téléchargements/project-bolt-bolt-vue-xhxnftk6/hackaton_nounours_team/backend/models/User.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="useCase">
-      <metrics statements="43" coveredstatements="39" conditionals="18" coveredconditionals="15" methods="5" coveredmethods="5"/>
+      <metrics statements="71" coveredstatements="61" conditionals="24" coveredconditionals="21" methods="9" coveredmethods="7"/>
       <file name="city.js" path="/home/ftran/Téléchargements/project-bolt-bolt-vue-xhxnftk6/hackaton_nounours_team/backend/useCase/city.js">
-        <metrics statements="43" coveredstatements="39" conditionals="18" coveredconditionals="15" methods="5" coveredmethods="5"/>
+        <metrics statements="50" coveredstatements="40" conditionals="18" coveredconditionals="15" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -36,28 +42,59 @@
         <line num="45" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="59" count="2" type="stmt"/>
-        <line num="60" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="76" count="2" type="stmt"/>
-        <line num="77" count="2" type="stmt"/>
-        <line num="83" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+        <line num="98" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="99" count="1" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="103" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
-        <line num="108" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
         <line num="113" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="128" count="1" type="stmt"/>
+      </file>
+      <file name="user.js" path="/home/ftran/Téléchargements/project-bolt-bolt-vue-xhxnftk6/hackaton_nounours_team/backend/useCase/user.js">
+        <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
       </file>
     </package>
   </project>
