@@ -26,17 +26,22 @@ const createJob = async (req, res) => {
     if (isNaN(parsedLatitude)) {
       return res.status(400).json({ error: 'Invalid latitude' });
     }
-    
+
     const parsedLongitude = Number(longitude);
     if (isNaN(parsedLongitude)) {
       return res.status(400).json({ error: 'Invalid longitude' });
     }
-    
+
     if (!city || typeof city !== 'string' || city.trim() === '') {
       return res.status(400).json({ error: 'Invalid city' });
     }
 
-    const sanitizedCity = city.trim().replace(/[$.]/g, '');
+    const sanitizedCity = city.trim();
+
+    if (/[^\w\s\-']/.test(sanitizedCity)) {
+      return res.status(400).json({ error: 'City name contains invalid characters' });
+    }
+
     const cityExists = await City.findOne({ name: sanitizedCity });
     if (!cityExists) {
       return res.status(404).json({ error: 'City not found' });
