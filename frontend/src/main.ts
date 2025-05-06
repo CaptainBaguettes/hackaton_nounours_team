@@ -1,14 +1,14 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+import { createWebHistory, createRouter } from "vue-router";
 
 import HomeView from './views/HomeView.vue'
 import JobsView from './views/JobsView.vue'
 import AddJobView from './views/AddJobView.vue'
 import LoginView from './views/LoginView.vue'
+import OffresMairie from "./views/Mairies.vue";
 import { Path } from 'leaflet'
-import { createWebHistory } from 'vue-router'
 
 import CandidatureSpontaneeView from './views/CandidatureSpontaneeView.vue'
 import Candidatures from './views/Candidatures.vue'
@@ -25,6 +25,7 @@ const routes = [
   { path: '/candidatures', component: Candidatures },
 
   { path: '/login', component: LoginView },
+  { path: "/offres_mairie", component: OffresMairie },
 ]
 
 const router = createRouter({
