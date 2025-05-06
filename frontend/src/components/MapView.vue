@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet.heat';
-import { fetchCities } from '../api/getData.js'
+import { fetchCities } from '../api/getData.js';
 
 // Reactive cities data
 const cities = ref([]);
@@ -32,16 +32,25 @@ let cityMarkers: L.Marker[] = [];
 // Constants
 const DEPARTMENT_CODE = '35';
 const MAP_CENTER = [48.117266, -1.6777926];
-const DEFAULT_ZOOM = 9;
+const DEFAULT_ZOOM = 10;
 const DEPARTMENT_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson';
 const COMMUNES_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/communes-version-simplifiee.geojson';
 
 /**
- * Generates data for the heatmap based on city population
+ * Generates data for the heatmap based on the population-per-doctor ratio
  */
 const getHeatData = () => {
   return cities.value.map((city: any) => {
-    const intensity = Math.log10(city.nb_population) * 0.8;
+    let intensity;
+    if (city.populationPerDoctor === null || city.populationPerDoctor >= 1000) {
+      intensity = 0.1; // Red for cities with population per doctor >= 1000
+    } else if (city.populationPerDoctor >= 500 && city.populationPerDoctor < 1000) {
+      intensity = 0.4; // Yellow for cities with 2 doctors per 1000 citizens
+    } else if (city.populationPerDoctor >= 333 && city.populationPerDoctor < 500) {
+      intensity = 0.7; // Green for cities with 3 doctors per 1000 citizens
+    } else {
+      intensity = 1.0; // Blue for cities with 4+ doctors per 1000 citizens
+    }
     return [city.latitude, city.longitude, intensity];
   });
 };
@@ -73,11 +82,23 @@ const addCityLabels = () => {
 const addCityMarkers = () => {
   cities.value.forEach((city: any) => {
     L.marker([city.latitude, city.longitude], { opacity: 0 })
-      .bindPopup(`
+      .bindTooltip(
+        `
         <b>${city.name}</b><br>
         Population: ${city.nb_population.toLocaleString()}<br>
-        Doctors: ${city.nb_doctors}
-      `)
+        Doctors: ${city.nb_doctors}<br>
+        Doctors per 1000 inhabitants: ${
+          city.populationPerDoctor !== null
+            ? (1000 / city.populationPerDoctor).toFixed(2)
+            : 'N/A'
+        }
+      `,
+        {
+          permanent: false, // Tooltip only shows on hover
+          direction: 'top', // Position the tooltip above the marker
+          className: 'city-tooltip', // Custom class for styling
+        }
+      )
       .addTo(map);
   });
 };
@@ -87,7 +108,7 @@ const addCityMarkers = () => {
  */
 const addLegend = () => {
   const legend = L.control({ position: 'bottomright' });
-  
+
   legend.onAdd = () => {
     const div = L.DomUtil.create('div', 'info legend');
     div.style.backgroundColor = 'white';
@@ -95,24 +116,19 @@ const addLegend = () => {
     div.style.borderRadius = '4px';
     div.style.border = '1px solid #ccc';
 
-    // Create gradient legend
-    div.innerHTML = '<h4>Population Density</h4>';
-
-    // Add gradient bar
-    const gradientBar = '<div style="width:100%; height:20px; background: linear-gradient(to right, #00f, #0f0, #ff0, #f00);"></div>';
-
-    // Add labels
+    div.innerHTML = '<h4>Medical Desert</h4>';
+    const gradientBar = '<div style="width:300px; height:20px; background: linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #0000FF);"></div>';
     div.innerHTML +=
       gradientBar +
       '<div style="display:flex; justify-content:space-between; margin-top:5px;">' +
-      '<span>Low</span>' +
-      '<span>Medium</span>' +
-      '<span>High</span>' +
+      '<span>0 Doc/hab</span>' +
+      '<span>1 Doc/hab</span>' +
+      '<span>2 Doc/hab</span>' +
       '</div>';
-    
+
     return div;
   };
-  
+
   legend.addTo(map);
 };
 
@@ -130,12 +146,12 @@ const showErrorMessage = (message: string) => {
   errorDiv.style.borderRadius = '4px';
   errorDiv.style.zIndex = '1000';
   errorDiv.innerHTML = message;
-  
+
   const mapElement = document.querySelector('#map');
   if (mapElement) {
     mapElement.appendChild(errorDiv);
   }
-  
+
   // Remove error message after 5 seconds
   setTimeout(() => {
     errorDiv.remove();
@@ -148,13 +164,13 @@ const showErrorMessage = (message: string) => {
 const loadDepartmentBoundaries = async () => {
   try {
     const response = await fetch(DEPARTMENT_GEOJSON_URL);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
+
     const geojsonData: GeoJsonData = await response.json();
-    
+
     L.geoJSON(geojsonData, {
       filter: (feature) => feature.properties.code === DEPARTMENT_CODE,
       style: {
@@ -178,16 +194,16 @@ const loadDepartmentBoundaries = async () => {
 const loadCommunesGeoJSON = async () => {
   try {
     console.log('Loading communes GeoJSON...');
-    
+
     const response = await fetch(COMMUNES_GEOJSON_URL);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
+
     const geojsonData: GeoJsonData = await response.json();
     console.log('GeoJSON loaded, processing...');
-    
+
     // Filter communes in department 35 (Ille-et-Vilaine)
     const filteredFeatures = geojsonData.features.filter(feature => {
       if (feature.properties?.code) {
@@ -196,22 +212,22 @@ const loadCommunesGeoJSON = async () => {
       }
       return false;
     });
-    
+
     console.log(`Found ${filteredFeatures.length} communes in department ${DEPARTMENT_CODE}`);
-    
+
     if (filteredFeatures.length === 0) {
       console.warn(`No communes found for department ${DEPARTMENT_CODE}`);
       return;
     }
-    
+
     // Add the filtered communes to the map
     L.geoJSON(
       { type: 'FeatureCollection', features: filteredFeatures },
       {
         style: {
-          color: 'rgba(255, 123, 255, 0.5)',
+          color: 'rgba(255, 123, 255, 1)',
           weight: 1,
-          fillOpacity: 0.2,
+          fillOpacity: 0,
         },
         onEachFeature: (feature, layer) => {
           if (feature.properties?.nom) {
@@ -220,7 +236,7 @@ const loadCommunesGeoJSON = async () => {
         },
       }
     ).addTo(map);
-    
+
     console.log('Communes GeoJSON added to map');
   } catch (error) {
     console.error('Error loading communes GeoJSON:', error);
@@ -229,28 +245,89 @@ const loadCommunesGeoJSON = async () => {
 };
 
 /**
+ * Fill areas without data
+ */
+const fillEmptyAreas = async () => {
+  try {
+    const response = await fetch(DEPARTMENT_GEOJSON_URL);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const geojsonData: GeoJsonData = await response.json();
+
+    // Get a set of city codes or names already in the data
+    const existingCityCodes = new Set(cities.value.map((city: any) => city.code));
+
+    // Filter to include only department 35 (Ille-et-Vilaine) and exclude existing cities
+    const filteredFeatures = geojsonData.features.filter(
+      (feature) =>
+        feature.properties?.code === DEPARTMENT_CODE &&
+        !existingCityCodes.has(feature.properties?.code)
+    );
+
+    if (filteredFeatures.length === 0) {
+      console.warn(`No features found for department ${DEPARTMENT_CODE} after filtering.`);
+      return;
+    }
+
+    // Add the GeoJSON layer with a style matching the "no doctors" color
+    L.geoJSON(
+      { type: 'FeatureCollection', features: filteredFeatures },
+      {
+        style: {
+          color: '#FF0000', // Red color for areas with no doctors
+          weight: 0,
+          fillOpacity: 0.1,
+        },
+      }
+    ).addTo(map);
+  } catch (error) {
+    console.error('Error loading GeoJSON for empty areas:', error);
+  }
+};
+
+/**
  * Initialize the map with all components
  */
-const initializeMap = () => {
-  // Create base map
-  map = L.map('map').setView(MAP_CENTER, DEFAULT_ZOOM);
+const initializeMap = async () => {
+  // Create base map with locked zoom level
+  map = L.map('map', {
+    center: MAP_CENTER,
+    zoom: DEFAULT_ZOOM,
+    minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
+    maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
+    zoomControl: false,    // Optionally disable zoom controls
+  });
 
   // Add tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
-  // Add heatmap layer
+  // Fill areas without data for department 35
+  await fillEmptyAreas();
+
   heatLayer = L.heatLayer(getHeatData(), {
     radius: 30,
-    blur: 15,
-    maxZoom: 10,
-    max: 7,
+    blur: 20,
+    maxZoom: 11,
+    max: 10,
+    minOpacity: 0.5,
+    gradient: {
+      0.0: '#FF0000', // Red for population per doctor >= 1000
+      0.3: '#FF0000', // Red for population per doctor >= 1000
+      0.6: '#FFFF00', // Yellow for 2 doctors per 1000 citizens
+      0.7: '#00FF00', // Green for 3 doctors per 1000 citizens
+      1.0: '#0000FF', // Blue for 4+ doctors per 1000 citizens
+    },
   }).addTo(map);
 
   // Add map components
   addCityLabels();
   addCityMarkers();
+  addLegend();
 };
 
 /**
@@ -266,10 +343,16 @@ const loadCities = async () => {
       if (heatLayer) map.removeLayer(heatLayer);
       cityMarkers.forEach((marker) => marker.remove());
       heatLayer = L.heatLayer(getHeatData(), {
-        radius: 40,
-        blur: 15,
-        maxZoom: 10,
-        max: 5,
+        radius: 40, // Increased radius for smoother heatmap
+        blur: 25,   // Increased blur for better blending
+        maxZoom: 12, // Adjusted max zoom for better visibility
+        max: 5,     // Maximum intensity value for normalization
+        gradient: {
+          0.0: '#FF0000', // Red for cities with no doctors
+          0.33: '#FFFF00', // Yellow
+          0.66: '#00FF00', // Green
+          1.0: '#0000FF', // Blue
+        },
       }).addTo(map);
       addCityLabels();
       addCityMarkers();
@@ -281,8 +364,9 @@ const loadCities = async () => {
 
 // Lifecycle hooks
 onMounted(async () => {
-  await loadCities(); // Load cities data before initializing the map
+  await loadCities();
   initializeMap();
+  await loadDepartmentBoundaries();
 });
 
 onUnmounted(() => {
@@ -309,5 +393,14 @@ onUnmounted(() => {
   font-size: 12px;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white,
     -1px 1px 1px white;
+}
+
+.city-tooltip {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 </style>
