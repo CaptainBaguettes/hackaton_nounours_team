@@ -8,10 +8,10 @@
           :items="filteredJobs"
           :headers="headers"
           class="mb-4"
-        >   
+        >
           <template #item.status="{ item }">
             <v-chip :color="getStatusColor(item.status)" dark>
-              {{ getStatusLabel(item.status)}}
+              {{ getStatusLabel(item.status) }}
             </v-chip>
           </template>
         </v-data-table>
@@ -23,7 +23,7 @@
         <v-select
           v-model="selectedStatus"
           :items="jobStatuses"
-          item-text="text"
+          item-title="text"
           item-value="value"
           label="Filtrer par statut"
           clearable
@@ -44,23 +44,16 @@ import { CandidatureStatus } from "../enum/CandidatureStatus";
 
 export default {
   name: "Candidatures",
-    data() {
-        
+  data() {
     const job = new Candidature(1, "Dev Fullstack", "TS + Node", "Paris", CandidatureStatus.PENDING);
-    const job2 = new Candidature(2, "Dev Frontend", "React + TS",  "Lyon", CandidatureStatus.PENDING);
+    const job2 = new Candidature(2, "Dev Frontend", "React + TS", "Lyon", CandidatureStatus.PENDING);
     const job3 = new Candidature(3, "Dev Backend 3", "Node + TS", "Lille", CandidatureStatus.PENDING);
     const job4 = new Candidature(4, "Dev Backend 4", "Node + TS", "Lille", CandidatureStatus.VALIDATED);
-    const job5 = new Candidature(4, "Dev Backend 4", "Node + TS", "Lille", CandidatureStatus.VALIDATED);
-    const job6 = new Candidature(5, "Dev Backend 5", "Node + TS",  "Lille", CandidatureStatus.REFUSED);
-    const job7 = new Candidature(5, "Dev Backend 5", "Node + TS",  "Lille", CandidatureStatus.REFUSED);
-    const job8 = new Candidature(5, "Dev Backend 5", "Node + TS", "Lille", CandidatureStatus.REFUSED);
-    const job9 = new Candidature(5, "Dev Backend 5", "Node + TS",  "Lille", CandidatureStatus.REFUSED);
-    const job10 = new Candidature(5, "Dev Backend 5", "Node + TS", "Lille", CandidatureStatus.REFUSED);
-    const job11 = new Candidature(5, "Dev Backend 5", "Node + TS", "Lille", CandidatureStatus.REFUSED);
+    const job5 = new Candidature(5, "Dev Backend 5", "Node + TS", "Lille", CandidatureStatus.REFUSED);
+    
     return {
-      jobs: [job, job2, job3, job4, job5, job6, job7, job8, job9, job10, job11],
+      jobs: [job, job2, job3, job4, job5],
       selectedStatus: "",
-      // Mise à jour de la structure des en-têtes pour v-data-table
       headers: [
         { text: "Titre", value: "title" },
         { text: "Description", value: "description" },
@@ -71,20 +64,22 @@ export default {
   },
   computed: {
     jobStatuses() {
-      return Object.values(CandidatureStatus);
+      return Object.values(CandidatureStatus).map(status => ({
+        text: this.getStatusLabel(status),
+        value: status
+      }));
     },
     filteredJobs() {
-        const list = this.selectedStatus
-            ? this.jobs.filter(job => job.status === this.selectedStatus)
-            : this.jobs;
+      const list = this.selectedStatus
+        ? this.jobs.filter(job => job.status === this.selectedStatus)
+        : this.jobs;
 
-        // Reformater les objets JobOffer en objets plats
-        return list.map(job => ({
-            title: job.title,
-            description: job.description,
-            location: job.location,
-            status: job.status,
-        }));
+      return list.map(job => ({
+        title: job.title,
+        description: job.description,
+        location: job.location,
+        status: job.status,
+      }));
     },
   },
   methods: {
@@ -111,11 +106,11 @@ export default {
         default:
           return status;
       }
-
     }
   },
 };
 </script>
+
 
 <style scoped>
 
