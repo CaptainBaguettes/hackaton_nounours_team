@@ -3,269 +3,10 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import 'leaflet.heat';
+import { fetchCities } from '../api/getData.js'
 
-// Extended data for cities in Ille-et-Vilaine
-const cities = [
-  // Major cities
-  {
-    name: 'Rennes',
-    lat: 48.117266,
-    lng: -1.6777926,
-    population: 215366,
-    type: 'city',
-  },
-  {
-    name: 'Saint-Malo',
-    lat: 48.649337,
-    lng: -2.025674,
-    population: 46097,
-    type: 'city',
-  },
-  {
-    name: 'Fougères',
-    lat: 48.351067,
-    lng: -1.204567,
-    population: 20189,
-    type: 'city',
-  },
-  {
-    name: 'Vitré',
-    lat: 48.123889,
-    lng: -1.215278,
-    population: 17677,
-    type: 'city',
-  },
-  // Medium towns
-  { name: 'Redon', lat: 47.65, lng: -2.083333, population: 8867, type: 'town' },
-  {
-    name: 'Dinard',
-    lat: 48.633333,
-    lng: -2.05,
-    population: 9916,
-    type: 'town',
-  },
-  {
-    name: 'Bruz',
-    lat: 48.023333,
-    lng: -1.744444,
-    population: 18364,
-    type: 'town',
-  },
-  {
-    name: 'Cesson-Sévigné',
-    lat: 48.119722,
-    lng: -1.604444,
-    population: 17843,
-    type: 'town',
-  },
-  // Additional municipalities
-  {
-    name: 'Saint-Grégoire',
-    lat: 48.14,
-    lng: -1.6883,
-    population: 9600,
-    type: 'town',
-  },
-  {
-    name: 'Betton',
-    lat: 48.1786,
-    lng: -1.6442,
-    population: 11200,
-    type: 'town',
-  },
-  {
-    name: 'Chantepie',
-    lat: 48.0908,
-    lng: -1.5986,
-    population: 10500,
-    type: 'town',
-  },
-  {
-    name: 'Chartres-de-Bretagne',
-    lat: 48.0464,
-    lng: -1.7189,
-    population: 7800,
-    type: 'town',
-  },
-  { name: 'Pacé', lat: 48.1331, lng: -1.7756, population: 11300, type: 'town' },
-  {
-    name: 'Saint-Jacques-de-la-Lande',
-    lat: 48.0872,
-    lng: -1.71,
-    population: 8900,
-    type: 'town',
-  },
-  {
-    name: 'Vern-sur-Seiche',
-    lat: 48.0497,
-    lng: -1.5794,
-    population: 8000,
-    type: 'town',
-  },
-  {
-    name: 'Acigné',
-    lat: 48.1394,
-    lng: -1.5294,
-    population: 7000,
-    type: 'town',
-  },
-  {
-    name: 'Mordelles',
-    lat: 48.0725,
-    lng: -1.8517,
-    population: 7200,
-    type: 'town',
-  },
-  {
-    name: 'Noyal-sur-Vilaine',
-    lat: 48.1194,
-    lng: -1.5275,
-    population: 5700,
-    type: 'town',
-  },
-  { name: 'Janzé', lat: 47.9592, lng: -1.4903, population: 8300, type: 'town' },
-  {
-    name: 'Bain-de-Bretagne',
-    lat: 47.8414,
-    lng: -1.6839,
-    population: 7700,
-    type: 'town',
-  },
-  {
-    name: 'Guichen',
-    lat: 47.9886,
-    lng: -1.8047,
-    population: 8300,
-    type: 'town',
-  },
-  {
-    name: 'Liffré',
-    lat: 48.2103,
-    lng: -1.5064,
-    population: 7500,
-    type: 'town',
-  },
-  {
-    name: 'Châteaubourg',
-    lat: 48.1106,
-    lng: -1.4053,
-    population: 6400,
-    type: 'town',
-  },
-  {
-    name: 'La Guerche-de-Bretagne',
-    lat: 47.9422,
-    lng: -1.2306,
-    population: 4300,
-    type: 'town',
-  },
-  {
-    name: 'Dol-de-Bretagne',
-    lat: 48.5483,
-    lng: -1.7497,
-    population: 5600,
-    type: 'town',
-  },
-  {
-    name: 'Combourg',
-    lat: 48.4097,
-    lng: -1.75,
-    population: 5800,
-    type: 'town',
-  },
-  {
-    name: 'Melesse',
-    lat: 48.2203,
-    lng: -1.6586,
-    population: 6600,
-    type: 'town',
-  },
-  // Additional smaller towns and villages
-  {
-    name: 'Saint-Aubin-du-Cormier',
-    lat: 48.2587,
-    lng: -1.3992,
-    population: 3800,
-    type: 'small town',
-  },
-  {
-    name: 'Pleurtuit',
-    lat: 48.5819,
-    lng: -2.0428,
-    population: 6200,
-    type: 'town',
-  },
-  {
-    name: 'Cancale',
-    lat: 48.6781,
-    lng: -1.8528,
-    population: 5300,
-    type: 'town',
-  },
-  {
-    name: 'Saint-Méen-le-Grand',
-    lat: 48.1883,
-    lng: -2.1931,
-    population: 4200,
-    type: 'town',
-  },
-  {
-    name: 'Montauban-de-Bretagne',
-    lat: 48.1958,
-    lng: -2.0503,
-    population: 5100,
-    type: 'town',
-  },
-  {
-    name: 'Montfort-sur-Meu',
-    lat: 48.1383,
-    lng: -1.9542,
-    population: 6700,
-    type: 'town',
-  },
-  {
-    name: 'Argentré-du-Plessis',
-    lat: 48.0575,
-    lng: -1.1569,
-    population: 4400,
-    type: 'town',
-  },
-  {
-    name: 'Retiers',
-    lat: 47.9167,
-    lng: -1.3833,
-    population: 4200,
-    type: 'town',
-  },
-  {
-    name: 'Pipriac',
-    lat: 47.8294,
-    lng: -1.9444,
-    population: 3700,
-    type: 'small town',
-  },
-  {
-    name: 'Maure-de-Bretagne',
-    lat: 47.9263,
-    lng: -2.0098,
-    population: 3300,
-    type: 'small town',
-  },
-  {
-    name: 'Tinténiac',
-    lat: 48.3087,
-    lng: -1.8412,
-    population: 3500,
-    type: 'small town',
-  },
-  {
-    name: "Saint-Aubin-d'Aubigné",
-    lat: 48.2352,
-    lng: -1.571,
-    population: 3600,
-    type: 'small town',
-  },
-];
+// Reactive cities data
+const cities = ref([]);
 
 // Type definitions
 interface GeoJsonFeature {
@@ -299,9 +40,9 @@ const COMMUNES_GEOJSON_URL = 'https://raw.githubusercontent.com/gregoiredavid/fr
  * Generates data for the heatmap based on city population
  */
 const getHeatData = () => {
-  return cities.map((city) => {
-    const intensity = Math.log10(city.population) * 0.8;
-    return [city.lat, city.lng, intensity];
+  return cities.value.map((city: any) => {
+    const intensity = Math.log10(city.nb_population) * 0.8;
+    return [city.latitude, city.longitude, intensity];
   });
 };
 
@@ -309,9 +50,9 @@ const getHeatData = () => {
  * Adds labels for major cities
  */
 const addCityLabels = () => {
-  cities.forEach((city) => {
-    if (city.population > 15000) {
-      const marker = L.marker([city.lat, city.lng], {
+  cities.value.forEach((city: any) => {
+    if (city.nb_population > 15000) {
+      const marker = L.marker([city.latitude, city.longitude], {
         opacity: 0.01,
       })
         .bindTooltip(city.name, {
@@ -320,7 +61,7 @@ const addCityLabels = () => {
           className: 'city-label',
         })
         .addTo(map);
-      
+
       cityMarkers.push(marker);
     }
   });
@@ -330,12 +71,12 @@ const addCityLabels = () => {
  * Creates and adds markers for all cities with population info
  */
 const addCityMarkers = () => {
-  cities.forEach((city) => {
-    L.marker([city.lat, city.lng], { opacity: 0 })
+  cities.value.forEach((city: any) => {
+    L.marker([city.latitude, city.longitude], { opacity: 0 })
       .bindPopup(`
         <b>${city.name}</b><br>
-        Population: ${city.population.toLocaleString()}<br>
-        Type: ${city.type}
+        Population: ${city.nb_population.toLocaleString()}<br>
+        Doctors: ${city.nb_doctors}
       `)
       .addTo(map);
   });
@@ -501,23 +242,46 @@ const initializeMap = () => {
 
   // Add heatmap layer
   heatLayer = L.heatLayer(getHeatData(), {
-    radius: 40,
+    radius: 30,
     blur: 15,
     maxZoom: 10,
-    max: 5,
+    max: 7,
   }).addTo(map);
 
   // Add map components
   addCityLabels();
   addCityMarkers();
-  addLegend();
-  
-  // Load GeoJSON data
-  loadDepartmentBoundaries();
+};
+
+/**
+ * Fetch cities data from the API and update the map
+ */
+const loadCities = async () => {
+  try {
+    const fetchedCities = await fetchCities();
+    cities.value = fetchedCities;
+
+    // Reinitialize the map with the new data
+    if (map) {
+      if (heatLayer) map.removeLayer(heatLayer);
+      cityMarkers.forEach((marker) => marker.remove());
+      heatLayer = L.heatLayer(getHeatData(), {
+        radius: 40,
+        blur: 15,
+        maxZoom: 10,
+        max: 5,
+      }).addTo(map);
+      addCityLabels();
+      addCityMarkers();
+    }
+  } catch (error) {
+    console.error('Error loading cities:', error);
+  }
 };
 
 // Lifecycle hooks
-onMounted(() => {
+onMounted(async () => {
+  await loadCities(); // Load cities data before initializing the map
   initializeMap();
 });
 
