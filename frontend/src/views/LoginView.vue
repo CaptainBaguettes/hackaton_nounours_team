@@ -122,6 +122,7 @@ watch(accountType, (newVal) => {
               type="email"
               placeholder="Email"
               class="w-full mt-1 border border-gray-300 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            />
         </div>
         <div>
           <label class="block text-sm text-gray-600">Mot de passe</label>

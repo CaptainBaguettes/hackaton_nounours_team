@@ -55,10 +55,10 @@ export default {
       jobs: [job, job2, job3, job4, job5],
       selectedStatus: "",
       headers: [
-        { text: "Titre", value: "title" },
-        { text: "Description", value: "description" },
-        { text: "Lieu", value: "location" },
-        { text: "Statut", value: "status" },
+        { title: "Titre", value: "title" },
+        { title: "Description", value: "description" },
+        { title: "Lieu", value: "location" },
+        { title: "Statut", value: "status" },
       ],
     };
   },
@@ -77,7 +77,7 @@ export default {
       return list.map(job => ({
         title: job.title,
         description: job.description,
-        location: job.location,
+        location: job.city,
         status: job.status,
       }));
     },
