@@ -21,6 +21,8 @@
         <v-select
           v-model="sortOrder"
           :items="sortOptions"
+          item-title="label"
+          item-value="value"
           label="Trier par date"
           clearable
         />
@@ -33,7 +35,6 @@
     </v-row>
   </v-container>
 </template>
-
 
 <script>
 import { JobOffer } from "../models/JobOffer";
@@ -48,8 +49,8 @@ export default {
       jobs: [job1, job2],
       sortOrder: "",
       sortOptions: [
-        { text: "Date croissante", value: "asc" },
-        { text: "Date décroissante", value: "desc" },
+        { label: "Date de publication croissante", value: "asc" },
+        { label: "Date de publication décroissante", value: "desc" },
       ],
       headers: [
         { text: "Titre", value: "title" },
@@ -72,8 +73,8 @@ export default {
     },
   },
 };
-
 </script>
+
 
 <style scoped>
 
@@ -89,7 +90,7 @@ export default {
 /* Pour encore plus d’espace entre les colonnes : */
 .v-col:first-child {
   margin-right: 40px;
-}
+} 
 .job-view {
     padding: 20px;
 }
