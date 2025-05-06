@@ -3,9 +3,8 @@
         <div class="navbar-left">
             <RouterLink to="/" class="nav-button">Accueil</RouterLink>
             <RouterLink to="/jobs" class="nav-button">Offres</RouterLink>
+            <RouterLink to="/candidatures" class="nav-button">Mes candidatures</RouterLink>
             <RouterLink to="/" class="nav-button">Mairie</RouterLink>
-            <RouterLink to="/" class="nav-button">Pharmacie</RouterLink>
-            <RouterLink to="/candidature" class="nav-button">Candidature Spontanée</RouterLink>
         </div>
         <div class="navbar-right">
             <button class="user-login">
