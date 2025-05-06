@@ -50,6 +50,9 @@ cd backend/
 npm install
 npm run start
 
+# lancer les tests
+npm test
+
 # Pour la BD, créer un fichier .env à la racine de backend/ et copier :
 DB_USER=
 DB_PASSWORD=
