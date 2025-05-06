@@ -334,7 +334,7 @@ const initializeMap = async () => {
   }).addTo(map);
 
   // Fill areas without data for department 35
-  // await fillEmptyAreas();
+  await fillEmptyAreas();
 
   heatLayer = L.heatLayer(getHeatData(), {
     radius: 40,
