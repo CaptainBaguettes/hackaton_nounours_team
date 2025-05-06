@@ -5,10 +5,6 @@ const jwt = require("jsonwebtoken");
 
 exports.signup = async (req, res, next) => {
   const city = await City.findOne({ name: req.body.city });
-  console.log(city);
-  if (!city) {
-    return res.status(400).json({ error: "Ville non trouvée !" });
-  }
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {

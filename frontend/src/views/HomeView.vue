@@ -1,54 +1,125 @@
-<script setup lang="ts">
-import MapView from "../components/MapView.vue";
-</script>
-
 <template>
    <div class="home-view">
-      <div class="content">
-         <div class="left-section">
-            <div class="boxes">
-               <div class="box">
-                  <h3>Besoin médical</h3>
-                  <p>Déficit médical</p>
-               </div>
-               <div class="box">
-                  <h3>Commune</h3>
-                  <p>Saint-Malo</p>
-               </div>
-               <div class="box">
-                  <h3>Population</h3>
-                  <p>10 000 habitants</p>
-               </div>
-            </div>
-
-            <MapView class="map-view" />
-         </div>
-
-         <div class="right-section">
-            <div class="info-card">
-               <h2>Camion itinérant</h2>
-               <p>Maire : Nathalie Appéré</p>
-               <p>Commune : Rennes</p>
-            </div>
-            <div class="info-card">
-               <h2>Permanence Pharmacie</h2>
-               <p>Maire : Nathalie Appéré</p>
-               <p>Commune : Rennes</p>
-            </div>
-            <div class="info-card">
-               <h2>Maison de santé</h2>
-               <p>Maire : Nathalie Appéré</p>
-               <p>Commune : Rennes</p>
-            </div>
-            <div class="button-container">
-               <RouterLink to="/add_job" class="propose-button">
-                  Proposer vos services
-               </RouterLink>
+     <div class="content">
+       <div class="left-section"> 
+         <div class="boxes">
+           <div class="box">
+             <h3>Besoin médical</h3>
+             <p>{{ medicalNeed }}</p>
+           </div>
+           <div class="box">
+             <h3>Commune</h3>
+             <p>{{ selectedCity?.name || 'Non sélectionnée' }}</p>
+           </div>
+           <div class="box">
+             <h3>Population</h3>
+             <p>{{ selectedCity ? `${selectedCity.nb_population.toLocaleString()} habitants` : 'N/A' }}</p>
+           </div>
+            <div class="box">
+               <h3>Nombre de médecins</h3>
+               <p>{{ selectedCity ? `${selectedCity.nb_doctors} médecins` : 'N/A' }}</p>
             </div>
          </div>
-      </div>
+ 
+         <MapView class="map-view" />
+       </div>
+ 
+       <!-- Le reste de votre template reste inchangé -->
+       <div class="right-section">
+         <div class="city-selector">
+             <h2>Sélectionnez une ville</h2>
+           <v-autocomplete
+             v-model="selectedCity"
+             :items="cities"
+             item-title="name"
+             item-value="_id"
+             label="Sélectionnez une ville"
+             return-object
+             variant="outlined"
+             :loading="loading"
+           ></v-autocomplete>
+         </div>
+
+         <h2>Offres disponibles</h2>
+         <div class="info-card">
+           <h2>Camion itinérant</h2>
+           <p>Maire : Nathalie Appéré</p>
+           <p>Commune : Rennes</p>
+         </div>
+         <div class="info-card">
+           <h2>Permanence Pharmacie</h2>
+           <p>Maire : Nathalie Appéré</p>
+           <p>Commune : Rennes</p>
+         </div>
+         <div class="info-card">
+           <h2>Maison de santé</h2>
+           <p>Maire : Nathalie Appéré</p>
+           <p>Commune : Rennes</p>
+         </div>
+         <div class="button-container">
+           <RouterLink to="/add_job" class="propose-button">
+             Proposer vos services
+           </RouterLink>
+         </div>
+       </div>
+     </div>
    </div>
 </template>
+
+<script setup lang="ts">
+import MapView from "../components/MapView.vue";
+import { ref, onMounted, computed } from 'vue';
+import axios from 'axios';
+
+// Interface pour les données des villes
+interface City {
+  _id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  nb_population: number;
+  nb_doctors: number;
+}
+
+// État et données
+const cities = ref<City[]>([]);
+const selectedCity = ref<City | null>(null);
+const loading = ref<boolean>(true);
+
+// Calculer le besoin médical
+const medicalNeed = computed(() => {
+  if (!selectedCity.value) return "N/A";
+  
+  // Un médecin pour ~1000 habitants est considéré comme correct
+  const population = selectedCity.value.nb_population;
+  const doctors = selectedCity.value.nb_doctors;
+  const doctorsNeeded = Math.ceil(population / 1000);
+  const deficit = doctorsNeeded - doctors;
+  
+  if (deficit <= 0) return "Bien couvert";
+  if (deficit <= 2) return "Léger déficit";
+  if (deficit <= 5) return "Déficit modéré";
+  return "Déficit important";
+});
+
+// Charger les villes au montage du composant
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/datas/cities');
+    cities.value = response.data;
+    
+    // Sélectionner la première ville par défaut
+    if (cities.value.length > 0) {
+      selectedCity.value = cities.value[0];
+    }
+    
+  } catch (error) {
+    console.error('Erreur lors du chargement des villes:', error);
+  } finally {
+    loading.value = false;
+  }
+});
+</script>
 
 <style scoped>
 html,
@@ -57,6 +128,11 @@ body {
    padding: 0;
    overflow: hidden;
    height: 100%;
+}
+
+.city-selector {
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .home-view {
