@@ -56,6 +56,11 @@ DB_PASSWORD=
 DB_NAME=
 ```
 
+## Pour accéder au swagger
+
+Après avoir lancé l'application :
+http://localhost:3000/api-docs/#/
+
 ## 🌟 Possible Evolutions
 
 Verification of the authenticity of doctors via their registration number to prevent unauthorized sign-ups.
