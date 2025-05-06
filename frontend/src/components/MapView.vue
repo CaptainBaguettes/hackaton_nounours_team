@@ -323,9 +323,9 @@ const initializeMap = async () => {
   map = L.map('map', {
     center: MAP_CENTER,
     zoom: DEFAULT_ZOOM,
-    // minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
-    // maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
-    // zoomControl: false,    // Optionally disable zoom controls
+    minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
+    maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
+    zoomControl: false,    // Optionally disable zoom controls
   });
 
   // Add tile layer
@@ -341,7 +341,7 @@ const initializeMap = async () => {
     blur: 30,
     maxZoom: 1,
     max: 1,
-    // minOpacity: 0.5,
+    // minOpacity: 0.1,
     gradient: {
       0.0: '#FF0000', // Red for population per doctor >= 1000
       0.3: '#FF0000', // Red for population per doctor >= 1000
