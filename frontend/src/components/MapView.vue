@@ -323,9 +323,9 @@ const initializeMap = async () => {
   map = L.map('map', {
     center: MAP_CENTER,
     zoom: DEFAULT_ZOOM,
-    minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
-    maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
-    zoomControl: false,    // Optionally disable zoom controls
+    // minZoom: DEFAULT_ZOOM, // Lock minimum zoom level
+    // maxZoom: DEFAULT_ZOOM, // Lock maximum zoom level
+    // zoomControl: false,    // Optionally disable zoom controls
   });
 
   // Add tile layer
@@ -334,14 +334,14 @@ const initializeMap = async () => {
   }).addTo(map);
 
   // Fill areas without data for department 35
-  await fillEmptyAreas();
+  // await fillEmptyAreas();
 
   heatLayer = L.heatLayer(getHeatData(), {
-    radius: 30,
-    blur: 20,
-    maxZoom: 11,
-    max: 10,
-    minOpacity: 0.5,
+    radius: 40,
+    blur: 30,
+    maxZoom: 1,
+    max: 1,
+    // minOpacity: 0.5,
     gradient: {
       0.0: '#FF0000', // Red for population per doctor >= 1000
       0.3: '#FF0000', // Red for population per doctor >= 1000
