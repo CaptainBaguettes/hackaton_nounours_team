@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Job = require('../models/Job');
 const Status = require('../models/Status');
+const City = require('../models/City');
 const UserJobStatus = require('../models/UserJobStatus');
 
 /**
@@ -11,8 +12,8 @@ const UserJobStatus = require('../models/UserJobStatus');
  */
 const createJob = async (req, res) => {
   try {
-    const { title, description, latitude, longitude, city } = req.body;
-    
+    const { title, description, city } = req.body;
+
     if (!title || typeof title !== 'string') {
       return res.status(400).json({ error: 'Invalid title' });
     }
@@ -31,16 +32,19 @@ const createJob = async (req, res) => {
       return res.status(400).json({ error: 'Invalid longitude' });
     }
     
-    if (!city || !mongoose.Types.ObjectId.isValid(city)) {
+    if (!city || typeof city !== 'string' || city.trim() === '') {
       return res.status(400).json({ error: 'Invalid city' });
     }
-    
+
+    const cityExists = await City.findOne({ name: city.trim() });
+    if (!cityExists) {
+      return res.status(404).json({ error: 'City not found' });
+    }
+
     const sanitizedJob = new Job({
       title: title.trim(),
       description: description.trim(),
-      latitude: parsedLatitude,
-      longitude: parsedLongitude,
-      city: mongoose.Types.ObjectId(city),
+      city: cityExists._id,
       createdAt: new Date()
     });
 
@@ -176,6 +180,7 @@ const applyToJob = async (req, res) => {
         const userJobStatus = new UserJobStatus({
             userId,
             statusId: pendingStatus._id,
+            jobId: job._id,
             description: description,
         });
         await userJobStatus.save();
@@ -187,6 +192,78 @@ const applyToJob = async (req, res) => {
     }
 };
 
+/**
+ * Find jobs by user ID
+ * @param {Object} req - Request object
+ * @param {Object} res - Response object
+ * @returns {Promise<Array>} List of jobs applied by the user with their status
+ */
+const findJobsByUserId = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    if (!userId || !mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ error: 'Invalid user ID' });
+    }
+
+    const userJobStatuses = await UserJobStatus.find({ userId })
+      .populate({
+        path: 'jobId',
+        populate: { path: 'city' }
+      })
+      .populate('statusId');
+    
+    if (!userJobStatuses || userJobStatuses.length === 0) {
+      return res.status(404).json({ error: 'No jobs found for this user' });
+    }
+
+    const formattedJobs = userJobStatuses.map(application => {
+      const jobData = application.jobId ? application.jobId.toObject() : {};
+      
+      return {
+        job: jobData,
+        application: {
+          id: application._id,
+          description: application.description,
+          date: application._id.getTimestamp(),
+          status: application.statusId ? application.statusId.status : 'Unknown'
+        }
+      };
+    });
+
+    res.status(200).json(formattedJobs);
+  } catch (error) {
+    console.error(`Error finding jobs by user ID: ${error.message}`);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+/**
+ * Find jobs by city ID
+ * @param {Object} req - Request object
+ * @param {Object} res - Response object
+ * @returns {Promise<Array>} List of jobs in the specified city
+ */
+const findJobsByCityId = async (req, res) => {
+  try {
+    const { cityId } = req.params;
+
+    if (!cityId || !mongoose.Types.ObjectId.isValid(cityId)) {
+      return res.status(400).json({ error: 'Invalid city ID' });
+    }
+
+    const jobs = await Job.find({ city: cityId });
+    if (!jobs || jobs.length === 0) {
+      return res.status(404).json({ error: 'No jobs found for this city' });
+    }
+
+    res.status(200).json(jobs);
+  } catch (error) {
+    console.error(`Error finding jobs by city ID: ${error.message}`);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   createJob,
   getAllJobs,
@@ -194,4 +271,6 @@ module.exports = {
   updateJob,
   deleteJob,
   applyToJob,
+  findJobsByUserId,
+  findJobsByCityId,
 };
