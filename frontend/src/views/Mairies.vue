@@ -1,7 +1,7 @@
 <template>
-   <div class="offres-mairie">
+   <div class="mairie">
       <div class="left-section">
-         <h2>Liste des mairies</h2>
+         <h2>Mairies</h2>
          <div
             class="mairie-card"
             v-for="mairie in filteredMairies"
@@ -152,7 +152,7 @@ export default {
 </script>
 
 <style scoped>
-.offres-mairie {
+.mairie {
    display: flex;
    gap: 20px;
    padding: 20px;

@@ -7,7 +7,7 @@ import HomeView from './views/HomeView.vue'
 import JobsView from './views/JobsView.vue'
 import AddJobView from './views/AddJobView.vue'
 import LoginView from './views/LoginView.vue'
-import OffresMairie from "./views/OffresMairie.vue";
+import OffresMairie from "./views/Mairies.vue";
 import { Path } from 'leaflet'
 
 import CandidatureSpontaneeView from './views/CandidatureSpontaneeView.vue'
