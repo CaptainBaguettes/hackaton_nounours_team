@@ -6,12 +6,14 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 import JobView from './views/JobView.vue'
 import AddJobView from './views/AddJobView.vue'
+import CandidatureView from './views/CandidatureView.vue'
 
 
 const routes = [
   { path: '/', component: HomeView },
   { path: '/jobs', component: JobView },
   { path: '/add_job', component: AddJobView },
+  { path: '/candidature', component: CandidatureView },
 ]
 
 const router = createRouter({
