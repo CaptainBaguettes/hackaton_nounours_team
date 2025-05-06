@@ -4,7 +4,8 @@
             <RouterLink to="/" class="nav-button">Accueil</RouterLink>
             <RouterLink to="/jobs" class="nav-button">Offres</RouterLink>
             <RouterLink to="/candidatures" class="nav-button">Mes candidatures</RouterLink>
-            <RouterLink to="/" class="nav-button">Mairie</RouterLink>
+            <RouterLink to="/" class="nav-button">Mairies</RouterLink>
+
         </div>
         <div class="navbar-right">
             <button class="user-login">
