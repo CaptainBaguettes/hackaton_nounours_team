@@ -1,45 +1,46 @@
-import { JobOfferStatus } from "../enum/JobOfferStatus";
+import { ApplicationStatus } from "../enum/ApplicationStatus";
 
-export class JobOffer {
+export class Application {
     id: number;
     title: string;
     description: string;
-    location: string;
-    status: JobOfferStatus;
+    city: string;
+    status: ApplicationStatus;
+
 
     constructor(
         id: number,
         title: string,
         description: string,
-        location: string,
-        status: JobOfferStatus = JobOfferStatus.WAITING
+        city: string,
+        status: ApplicationStatus = ApplicationStatus.PENDING
     ) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.location = location;
+        this.city = city;
         this.status = status;
     }
 
     // Méthode pour changer le statut de l'offre
-    changeStatus(newStatus: JobOfferStatus): void {
+    changeStatus(newStatus: ApplicationStatus): void {
         this.status = newStatus;
     }
 
     // Méthode pour afficher les détails de l'offre
     getDetails(): string {
-        return `JobOffer [ID: ${this.id}, Title: ${this.title}, Location: ${this.location}, Status: ${this.status}]`;
+        return `JobOffer [ID: ${this.id}, Title: ${this.title}, Mairie de la ville : ${this.city}, Status: ${this.status}]`;
     }
 
     // Méthode statique pour créer une instance de JobOffer à partir d'une chaîne de caractères
-    static fromStringStatus(statusStr: string): JobOfferStatus {
+    static fromStringStatus(statusStr: string): ApplicationStatus {
         switch (statusStr.toUpperCase()) {
             case "VALIDATED":
-                return JobOfferStatus.VALIDATED;
-            case "WAITING":
-                return JobOfferStatus.WAITING;
+                return ApplicationStatus.VALIDATED;
+            case "PENDING":
+                return ApplicationStatus.PENDING;
             case "REFUSED":
-                return JobOfferStatus.REFUSED;
+                return ApplicationStatus.REFUSED;
             default:
                 throw new Error(`Statut invalide : ${statusStr}`);
         }
