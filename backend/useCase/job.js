@@ -4,15 +4,10 @@ const Status = require('../models/Status');
 const City = require('../models/City');
 const UserJobStatus = require('../models/UserJobStatus');
 
-/**
- * Create a new job
- * @param {Object} req - Request object
- * @param {Object} res - Response object
- * @returns {Promise<Object>} Created job
- */
+
 const createJob = async (req, res) => {
   try {
-    const { title, description, city } = req.body;
+    const { title, description, city, influx } = req.body;
 
     if (!title || typeof title !== 'string') {
       return res.status(400).json({ error: 'Invalid title' });
@@ -20,16 +15,6 @@ const createJob = async (req, res) => {
     
     if (!description || typeof description !== 'string') {
       return res.status(400).json({ error: 'Invalid description' });
-    }
-    
-    const parsedLatitude = Number(latitude);
-    if (isNaN(parsedLatitude)) {
-      return res.status(400).json({ error: 'Invalid latitude' });
-    }
-
-    const parsedLongitude = Number(longitude);
-    if (isNaN(parsedLongitude)) {
-      return res.status(400).json({ error: 'Invalid longitude' });
     }
 
     if (!city || typeof city !== 'string' || city.trim() === '') {
@@ -47,10 +32,18 @@ const createJob = async (req, res) => {
       return res.status(404).json({ error: 'City not found' });
     }
 
+    if (influx && typeof influx !== 'number') {
+      return res.status(400).json({ error: 'Invalid influx value' });
+    }
+    if (influx && influx < 0) {
+      return res.status(400).json({ error: 'Influx value cannot be negative' });
+    }
+
     const sanitizedJob = new Job({
       title: title.trim(),
       description: description.trim(),
       city: cityExists._id,
+      influx: influx || 0,
       createdAt: new Date()
     });
 

@@ -1,7 +1,10 @@
 const express = require("express");
-const datasRoute = require("./routes/data");
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
 const bodyParser = require("body-parser");
+const datasRoute = require("./routes/data");
 const userRoutes = require("./routes/user");
+const jobsRoute = require("./routes/jobs");
 
 const app = express();
 
@@ -22,6 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api", userRoutes);
+app.use("/api", jobsRoute);
 
 app.use(
   "/api/datas",
@@ -37,5 +41,38 @@ app.use(
   },
   datasRoute
 );
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: "3.0.0",
+    info: {
+      title: "API Hackaton Nounours Team",
+      version: "1.0.0",
+      description: "Documentation de l'API",
+      contact: {
+        name: "Équipe Nounours"
+      },
+      servers: [
+        {
+          url: "http://localhost:3000/api",
+          description: "Serveur de développement"
+        }
+      ]
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT"
+        }
+      }
+    }
+  },
+  apis: ["./routes/*.js", "./models/*.js"]
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 module.exports = app;
